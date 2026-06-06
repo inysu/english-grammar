@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小学英语语法训练 - Lesson 2 可数名词单复数</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;background:linear-gradient(135deg,#E8F0FE 0%,#F0E6FF 50%,#E8F8F5 100%);min-height:100vh;padding:20px;color:#333;line-height:1.7}
+.container{max-width:960px;margin:0 auto}
+.global-bar{position:sticky;top:12px;z-index:100;background:#fff;border-radius:16px;padding:14px 22px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,0.1);display:flex;align-items:center;gap:16px;flex-wrap:wrap;border:2px solid #E8EDF5}
+.global-bar .g-title{font-weight:800;font-size:15px;color:#4A90D9;white-space:nowrap}
+.global-bar .g-stat{display:flex;align-items:center;gap:4px;font-size:14px;color:#666}
+.global-bar .g-stat strong{font-size:22px;background:linear-gradient(135deg,#4A90D9,#6C5CE7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.global-bar .g-progress{flex:1;min-width:100px}
+.global-bar .g-bar-wrap{height:12px;background:#EDF2F7;border-radius:10px;overflow:hidden}
+.global-bar .g-bar-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#27AE60,#2ECC71);transition:width 0.5s ease}
+.global-bar .g-grade{font-weight:700;font-size:14px;color:#27AE60;white-space:nowrap}
+.header{background:linear-gradient(135deg,#4A90D9,#6C5CE7);color:#fff;padding:28px 25px;border-radius:16px;margin-bottom:22px;text-align:center;box-shadow:0 6px 24px rgba(74,144,217,0.25);position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:rgba(255,255,255,0.08);border-radius:50%}
+.header::after{content:'';position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;background:rgba(255,255,255,0.06);border-radius:50%}
+.header h1{font-size:28px;font-weight:700;margin-bottom:4px;position:relative;z-index:1}
+.header .sub{font-size:15px;opacity:0.9;position:relative;z-index:1}
+.section{background:#fff;border-radius:14px;margin-bottom:16px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,0.06);transition:box-shadow 0.3s}
+.section.graded{border:2px solid #27AE60}
+.sec-header{background:linear-gradient(90deg,#F8FAFD,#EEF3FB);padding:14px 20px;border-bottom:2px solid #E8EDF5;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sec-num{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
+.sec-title{font-size:17px;font-weight:700;color:#2C3E50}
+.sec-score{font-size:13px;margin-left:auto;padding:4px 12px;border-radius:12px;font-weight:600}
+.sec-score.done{background:#E8F8F0;color:#27AE60}
+.sec-score.wait{background:#F5F5F5;color:#aaa}
+.q-list{padding:16px 20px}
+.q-item{display:flex;flex-direction:column;padding:14px 16px;margin-bottom:8px;border-radius:10px;background:#FAFBFC;gap:8px;transition:background 0.2s}
+.q-item:nth-child(even){background:#fff}
+.q-item.correct{background:#E8F8F0!important;border-left:4px solid #27AE60}
+.q-item.wrong{background:#FDEAEA!important;border-left:4px solid #E74C3C}
+.q-head{display:flex;align-items:flex-start;gap:8px}
+.q-num{font-weight:700;color:#4A90D9;min-width:40px;font-size:15px;flex-shrink:0;padding-top:2px}
+.q-text{flex:1;font-size:15px;line-height:1.6}
+.radio-group{display:flex;flex-direction:column;gap:5px;padding-left:48px}
+.radio-group label{display:flex;align-items:center;gap:8px;cursor:pointer;padding:8px 14px;border-radius:8px;border:2px solid #DDE3ED;font-size:14px;font-weight:500;transition:all 0.2s;user-select:none;background:#fff}
+.radio-group label:hover{border-color:#4A90D9;background:#F0F5FF}
+.radio-group input[type="radio"]{width:16px;height:16px;cursor:pointer;accent-color:#4A90D9}
+.radio-group label:has(input:checked){border-color:#4A90D9;background:#EBF3FF}
+.q-result{display:none;font-size:15px;font-weight:700;padding-left:48px}
+.q-result.show{display:block}
+.q-result .ok{color:#27AE60}.q-result .no{color:#E74C3C}
+.explain{display:none;margin:4px 0 0 48px;padding:10px 14px;background:#FFFBEB;border-radius:8px;font-size:13px;color:#7D6608;border:1px solid #F0E6C8;line-height:1.6}
+.explain.show{display:block}
+.explain strong{color:#B8860B}
+.btn-row{display:flex;gap:10px;padding:10px 20px 16px;flex-wrap:wrap}
+.btn{padding:8px 20px;border-radius:20px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s}
+.btn-submit{background:linear-gradient(135deg,#4A90D9,#6C5CE7);color:#fff}
+.btn-submit:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(74,144,217,0.4)}
+.btn-submit:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-reset-sec{background:#F0F2F5;color:#666}.btn-reset-sec:hover{background:#E2E6EA}
+.btn-reset{background:linear-gradient(135deg,#E74C3C,#C0392B);color:#fff}.btn-reset:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(231,76,60,0.4)}
+.footer{text-align:center;padding:20px;color:#999;font-size:12px;margin-top:10px}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="global-bar">
+<div class="g-title">Lesson 2 进度</div>
+<div class="g-stat">已完成 <strong id="gDone">0</strong> / 7 大题</div>
+<div class="g-stat">正确数 <strong id="gScore">0</strong> / <span id="gTotal">0</span></div>
+<div class="g-progress"><div class="g-bar-wrap"><div class="g-bar-fill" id="gBarFill" style="width:0%"></div></div></div>
+<div class="g-grade" id="gGrade">尚未批改</div>
+</div>
+<div class="header">
+<h1>Lesson 2 可数名词 — 单复数变化规则</h1>
+<div class="sub">规则变化 · 不规则变化 · 综合练习 | 共 145 题</div>
+</div>
+<div class="section" id="sec1">
+<div class="sec-header">
+<div class="sec-num" style="background:#4A90D9">1</div>
+<div class="sec-title">一、名词规则变化 — 写出下列名词的复数形式</div>
+<div class="sec-score wait" id="sec1_badge">未批改</div>
+</div>
+<div class="q-list"><div class="q-item" id="q_sec1_1">
+<div class="q-head"><div class="q-num">1.</div><div class="q-text">apple 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_1" value="A"><span class="opt-text">A. apples</span></label>
+<label><input type="radio" name="sec1_1" value="B"><span class="opt-text">B. apples</span></label>
+<label><input type="radio" name="sec1_1" value="C"><span class="opt-text">C. appls</span></label>
+<label><input type="radio" name="sec1_1" value="D"><span class="opt-text">D. apple's</span></label>
+</div>
+<div class="q-result" id="r_sec1_1"></div>
+<div class="explain" id="e_sec1_1"><strong>答案：apples</strong><br>一般名词直接加 s：apple → apples。</div>
+</div>
+<div class="q-item" id="q_sec1_2">
+<div class="q-head"><div class="q-num">2.</div><div class="q-text">map 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_2" value="A"><span class="opt-text">A. maps</span></label>
+<label><input type="radio" name="sec1_2" value="B"><span class="opt-text">B. map</span></label>
+<label><input type="radio" name="sec1_2" value="C"><span class="opt-text">C. mapses</span></label>
+<label><input type="radio" name="sec1_2" value="D"><span class="opt-text">D. map's</span></label>
+</div>
+<div class="q-result" id="r_sec1_2"></div>
+<div class="explain" id="e_sec1_2"><strong>答案：maps</strong><br>一般名词直接加 s：map → maps。</div>
+</div>
+<div class="q-item" id="q_sec1_3">
+<div class="q-head"><div class="q-num">3.</div><div class="q-text">book 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_3" value="A"><span class="opt-text">A. books</span></label>
+<label><input type="radio" name="sec1_3" value="B"><span class="opt-text">B. book</span></label>
+<label><input type="radio" name="sec1_3" value="C"><span class="opt-text">C. bookses</span></label>
+<label><input type="radio" name="sec1_3" value="D"><span class="opt-text">D. book's</span></label>
+</div>
+<div class="q-result" id="r_sec1_3"></div>
+<div class="explain" id="e_sec1_3"><strong>答案：books</strong><br>一般名词直接加 s：book → books。</div>
+</div>
+<div class="q-item" id="q_sec1_4">
+<div class="q-head"><div class="q-num">4.</div><div class="q-text">pen 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_4" value="A"><span class="opt-text">A. pens</span></label>
+<label><input type="radio" name="sec1_4" value="B"><span class="opt-text">B. pen</span></label>
+<label><input type="radio" name="sec1_4" value="C"><span class="opt-text">C. penses</span></label>
+<label><input type="radio" name="sec1_4" value="D"><span class="opt-text">D. pen's</span></label>
+</div>
+<div class="q-result" id="r_sec1_4"></div>
+<div class="explain" id="e_sec1_4"><strong>答案：pens</strong><br>一般名词直接加 s：pen → pens。</div>
+</div>
+<div class="q-item" id="q_sec1_5">
+<div class="q-head"><div class="q-num">5.</div><div class="q-text">pencil 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_5" value="A"><span class="opt-text">A. pencils</span></label>
+<label><input type="radio" name="sec1_5" value="B"><span class="opt-text">B. pencil</span></label>
+<label><input type="radio" name="sec1_5" value="C"><span class="opt-text">C. pencilses</span></label>
+<label><input type="radio" name="sec1_5" value="D"><span class="opt-text">D. pencil's</span></label>
+</div>
+<div class="q-result" id="r_sec1_5"></div>
+<div class="explain" id="e_sec1_5"><strong>答案：pencils</strong><br>一般名词直接加 s：pencil → pencils。</div>
+</div>
+<div class="q-item" id="q_sec1_6">
+<div class="q-head"><div class="q-num">6.</div><div class="q-text">teacher 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_6" value="A"><span class="opt-text">A. teachers</span></label>
+<label><input type="radio" name="sec1_6" value="B"><span class="opt-text">B. teacher</span></label>
+<label><input type="radio" name="sec1_6" value="C"><span class="opt-text">C. teacherses</span></label>
+<label><input type="radio" name="sec1_6" value="D"><span class="opt-text">D. teacher's</span></label>
+</div>
+<div class="q-result" id="r_sec1_6"></div>
+<div class="explain" id="e_sec1_6"><strong>答案：teachers</strong><br>一般名词直接加 s：teacher → teachers。</div>
+</div>
+<div class="q-item" id="q_sec1_7">
+<div class="q-head"><div class="q-num">7.</div><div class="q-text">leaf 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_7" value="A"><span class="opt-text">A. leaves</span></label>
+<label><input type="radio" name="sec1_7" value="B"><span class="opt-text">B. leafs</span></label>
+<label><input type="radio" name="sec1_7" value="C"><span class="opt-text">C. leafes</span></label>
+<label><input type="radio" name="sec1_7" value="D"><span class="opt-text">D. leavs</span></label>
+</div>
+<div class="q-result" id="r_sec1_7"></div>
+<div class="explain" id="e_sec1_7"><strong>答案：leaves</strong><br>以 f/fe 结尾，变 f/fe 为 v 再加 es：leaf → leaves。</div>
+</div>
+<div class="q-item" id="q_sec1_8">
+<div class="q-head"><div class="q-num">8.</div><div class="q-text">tomato 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_8" value="A"><span class="opt-text">A. tomatoes</span></label>
+<label><input type="radio" name="sec1_8" value="B"><span class="opt-text">B. tomatos</span></label>
+<label><input type="radio" name="sec1_8" value="C"><span class="opt-text">C. tomatos</span></label>
+<label><input type="radio" name="sec1_8" value="D"><span class="opt-text">D. tomato's</span></label>
+</div>
+<div class="q-result" id="r_sec1_8"></div>
+<div class="explain" id="e_sec1_8"><strong>答案：tomatoes</strong><br>以 o 结尾的有生命名词加 es：tomato → tomatoes。</div>
+</div>
+<div class="q-item" id="q_sec1_9">
+<div class="q-head"><div class="q-num">9.</div><div class="q-text">potato 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_9" value="A"><span class="opt-text">A. potatoes</span></label>
+<label><input type="radio" name="sec1_9" value="B"><span class="opt-text">B. potatos</span></label>
+<label><input type="radio" name="sec1_9" value="C"><span class="opt-text">C. potatos</span></label>
+<label><input type="radio" name="sec1_9" value="D"><span class="opt-text">D. potato's</span></label>
+</div>
+<div class="q-result" id="r_sec1_9"></div>
+<div class="explain" id="e_sec1_9"><strong>答案：potatoes</strong><br>以 o 结尾的有生命名词加 es：potato → potatoes。</div>
+</div>
+<div class="q-item" id="q_sec1_10">
+<div class="q-head"><div class="q-num">10.</div><div class="q-text">bear 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_10" value="A"><span class="opt-text">A. bears</span></label>
+<label><input type="radio" name="sec1_10" value="B"><span class="opt-text">B. bear</span></label>
+<label><input type="radio" name="sec1_10" value="C"><span class="opt-text">C. bearses</span></label>
+<label><input type="radio" name="sec1_10" value="D"><span class="opt-text">D. bear's</span></label>
+</div>
+<div class="q-result" id="r_sec1_10"></div>
+<div class="explain" id="e_sec1_10"><strong>答案：bears</strong><br>一般名词直接加 s：bear → bears。</div>
+</div>
+<div class="q-item" id="q_sec1_11">
+<div class="q-head"><div class="q-num">11.</div><div class="q-text">box 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_11" value="A"><span class="opt-text">A. boxes</span></label>
+<label><input type="radio" name="sec1_11" value="B"><span class="opt-text">B. boxs</span></label>
+<label><input type="radio" name="sec1_11" value="C"><span class="opt-text">C. boxs</span></label>
+<label><input type="radio" name="sec1_11" value="D"><span class="opt-text">D. box's</span></label>
+</div>
+<div class="q-result" id="r_sec1_11"></div>
+<div class="explain" id="e_sec1_11"><strong>答案：boxes</strong><br>以 s, x, ch, sh 结尾加 es：box → boxes。</div>
+</div>
+<div class="q-item" id="q_sec1_12">
+<div class="q-head"><div class="q-num">12.</div><div class="q-text">cherry 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_12" value="A"><span class="opt-text">A. cherries</span></label>
+<label><input type="radio" name="sec1_12" value="B"><span class="opt-text">B. cherrys</span></label>
+<label><input type="radio" name="sec1_12" value="C"><span class="opt-text">C. cherris</span></label>
+<label><input type="radio" name="sec1_12" value="D"><span class="opt-text">D. cherriys</span></label>
+</div>
+<div class="q-result" id="r_sec1_12"></div>
+<div class="explain" id="e_sec1_12"><strong>答案：cherries</strong><br>以辅音字母+y 结尾，变 y 为 i 再加 es：cherry → cherries。</div>
+</div>
+<div class="q-item" id="q_sec1_13">
+<div class="q-head"><div class="q-num">13.</div><div class="q-text">strawberry 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_13" value="A"><span class="opt-text">A. strawberries</span></label>
+<label><input type="radio" name="sec1_13" value="B"><span class="opt-text">B. strawberrys</span></label>
+<label><input type="radio" name="sec1_13" value="C"><span class="opt-text">C. strawberris</span></label>
+<label><input type="radio" name="sec1_13" value="D"><span class="opt-text">D. strawberriys</span></label>
+</div>
+<div class="q-result" id="r_sec1_13"></div>
+<div class="explain" id="e_sec1_13"><strong>答案：strawberries</strong><br>以辅音字母+y 结尾，变 y 为 i 再加 es：strawberry → strawberries。</div>
+</div>
+<div class="q-item" id="q_sec1_14">
+<div class="q-head"><div class="q-num">14.</div><div class="q-text">knife 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_14" value="A"><span class="opt-text">A. knives</span></label>
+<label><input type="radio" name="sec1_14" value="B"><span class="opt-text">B. knifes</span></label>
+<label><input type="radio" name="sec1_14" value="C"><span class="opt-text">C. knifees</span></label>
+<label><input type="radio" name="sec1_14" value="D"><span class="opt-text">D. knivs</span></label>
+</div>
+<div class="q-result" id="r_sec1_14"></div>
+<div class="explain" id="e_sec1_14"><strong>答案：knives</strong><br>以 f/fe 结尾，变 f/fe 为 v 再加 es：knife → knives。</div>
+</div>
+<div class="q-item" id="q_sec1_15">
+<div class="q-head"><div class="q-num">15.</div><div class="q-text">boy 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec1_15" value="A"><span class="opt-text">A. boys</span></label>
+<label><input type="radio" name="sec1_15" value="B"><span class="opt-text">B. boy</span></label>
+<label><input type="radio" name="sec1_15" value="C"><span class="opt-text">C. boyses</span></label>
+<label><input type="radio" name="sec1_15" value="D"><span class="opt-text">D. boy's</span></label>
+</div>
+<div class="q-result" id="r_sec1_15"></div>
+<div class="explain" id="e_sec1_15"><strong>答案：boys</strong><br>以元音字母+y 结尾，直接加 s：boy → boys。</div>
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-submit" id="btn_sec1" onclick="checkSection('sec1')">提交批改</button>
+<button class="btn btn-reset-sec" onclick="resetSection('sec1')">重做本题组</button>
+</div>
+</div>
+<div class="section" id="sec2">
+<div class="sec-header">
+<div class="sec-num" style="background:#6C5CE7">2</div>
+<div class="sec-title">二、名词不规则变化 — 写出下列名词的复数形式</div>
+<div class="sec-score wait" id="sec2_badge">未批改</div>
+</div>
+<div class="q-list"><div class="q-item" id="q_sec2_1">
+<div class="q-head"><div class="q-num">1.</div><div class="q-text">foot 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_1" value="A"><span class="opt-text">A. feet</span></label>
+<label><input type="radio" name="sec2_1" value="B"><span class="opt-text">B. foots</span></label>
+<label><input type="radio" name="sec2_1" value="C"><span class="opt-text">C. feets</span></label>
+<label><input type="radio" name="sec2_1" value="D"><span class="opt-text">D. footes</span></label>
+</div>
+<div class="q-result" id="r_sec2_1"></div>
+<div class="explain" id="e_sec2_1"><strong>答案：feet</strong><br>不规则变化：foot → feet（oo 变 ee）。</div>
+</div>
+<div class="q-item" id="q_sec2_2">
+<div class="q-head"><div class="q-num">2.</div><div class="q-text">goose 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_2" value="A"><span class="opt-text">A. geese</span></label>
+<label><input type="radio" name="sec2_2" value="B"><span class="opt-text">B. gooses</span></label>
+<label><input type="radio" name="sec2_2" value="C"><span class="opt-text">C. geeses</span></label>
+<label><input type="radio" name="sec2_2" value="D"><span class="opt-text">D. goosees</span></label>
+</div>
+<div class="q-result" id="r_sec2_2"></div>
+<div class="explain" id="e_sec2_2"><strong>答案：geese</strong><br>不规则变化：goose → geese（oo 变 ee）。</div>
+</div>
+<div class="q-item" id="q_sec2_3">
+<div class="q-head"><div class="q-num">3.</div><div class="q-text">tooth 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_3" value="A"><span class="opt-text">A. teeth</span></label>
+<label><input type="radio" name="sec2_3" value="B"><span class="opt-text">B. tooths</span></label>
+<label><input type="radio" name="sec2_3" value="C"><span class="opt-text">C. toothes</span></label>
+<label><input type="radio" name="sec2_3" value="D"><span class="opt-text">D. teeths</span></label>
+</div>
+<div class="q-result" id="r_sec2_3"></div>
+<div class="explain" id="e_sec2_3"><strong>答案：teeth</strong><br>不规则变化：tooth → teeth（oo 变 ee）。</div>
+</div>
+<div class="q-item" id="q_sec2_4">
+<div class="q-head"><div class="q-num">4.</div><div class="q-text">Chinese 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_4" value="A"><span class="opt-text">A. Chinese</span></label>
+<label><input type="radio" name="sec2_4" value="B"><span class="opt-text">B. Chineses</span></label>
+<label><input type="radio" name="sec2_4" value="C"><span class="opt-text">C. Chinesees</span></label>
+<label><input type="radio" name="sec2_4" value="D"><span class="opt-text">D. Chinesies</span></label>
+</div>
+<div class="q-result" id="r_sec2_4"></div>
+<div class="explain" id="e_sec2_4"><strong>答案：Chinese</strong><br>单复数同形：Chinese → Chinese（中日不变）。</div>
+</div>
+<div class="q-item" id="q_sec2_5">
+<div class="q-head"><div class="q-num">5.</div><div class="q-text">Japanese 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_5" value="A"><span class="opt-text">A. Japanese</span></label>
+<label><input type="radio" name="sec2_5" value="B"><span class="opt-text">B. Japaneses</span></label>
+<label><input type="radio" name="sec2_5" value="C"><span class="opt-text">C. Japanesees</span></label>
+<label><input type="radio" name="sec2_5" value="D"><span class="opt-text">D. Japanesies</span></label>
+</div>
+<div class="q-result" id="r_sec2_5"></div>
+<div class="explain" id="e_sec2_5"><strong>答案：Japanese</strong><br>单复数同形：Japanese → Japanese（中日不变）。</div>
+</div>
+<div class="q-item" id="q_sec2_6">
+<div class="q-head"><div class="q-num">6.</div><div class="q-text">people 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_6" value="A"><span class="opt-text">A. people</span></label>
+<label><input type="radio" name="sec2_6" value="B"><span class="opt-text">B. peoples</span></label>
+<label><input type="radio" name="sec2_6" value="C"><span class="opt-text">C. peoplees</span></label>
+<label><input type="radio" name="sec2_6" value="D"><span class="opt-text">D. peoplies</span></label>
+</div>
+<div class="q-result" id="r_sec2_6"></div>
+<div class="explain" id="e_sec2_6"><strong>答案：people</strong><br>单复数同形：people → people（鱼羊鹿人不变）。</div>
+</div>
+<div class="q-item" id="q_sec2_7">
+<div class="q-head"><div class="q-num">7.</div><div class="q-text">deer 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_7" value="A"><span class="opt-text">A. deer</span></label>
+<label><input type="radio" name="sec2_7" value="B"><span class="opt-text">B. deers</span></label>
+<label><input type="radio" name="sec2_7" value="C"><span class="opt-text">C. deeres</span></label>
+<label><input type="radio" name="sec2_7" value="D"><span class="opt-text">D. deeies</span></label>
+</div>
+<div class="q-result" id="r_sec2_7"></div>
+<div class="explain" id="e_sec2_7"><strong>答案：deer</strong><br>单复数同形：deer → deer（鱼羊鹿人不变）。</div>
+</div>
+<div class="q-item" id="q_sec2_8">
+<div class="q-head"><div class="q-num">8.</div><div class="q-text">sheep 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_8" value="A"><span class="opt-text">A. sheep</span></label>
+<label><input type="radio" name="sec2_8" value="B"><span class="opt-text">B. sheeps</span></label>
+<label><input type="radio" name="sec2_8" value="C"><span class="opt-text">C. sheepes</span></label>
+<label><input type="radio" name="sec2_8" value="D"><span class="opt-text">D. sheeies</span></label>
+</div>
+<div class="q-result" id="r_sec2_8"></div>
+<div class="explain" id="e_sec2_8"><strong>答案：sheep</strong><br>单复数同形：sheep → sheep（鱼羊鹿人不变）。</div>
+</div>
+<div class="q-item" id="q_sec2_9">
+<div class="q-head"><div class="q-num">9.</div><div class="q-text">child 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_9" value="A"><span class="opt-text">A. children</span></label>
+<label><input type="radio" name="sec2_9" value="B"><span class="opt-text">B. childs</span></label>
+<label><input type="radio" name="sec2_9" value="C"><span class="opt-text">C. childs</span></label>
+<label><input type="radio" name="sec2_9" value="D"><span class="opt-text">D. childrens</span></label>
+</div>
+<div class="q-result" id="r_sec2_9"></div>
+<div class="explain" id="e_sec2_9"><strong>答案：children</strong><br>不规则变化：child → children（孩子后面加个 ren）。</div>
+</div>
+<div class="q-item" id="q_sec2_10">
+<div class="q-head"><div class="q-num">10.</div><div class="q-text">fish 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_10" value="A"><span class="opt-text">A. fish</span></label>
+<label><input type="radio" name="sec2_10" value="B"><span class="opt-text">B. fishs</span></label>
+<label><input type="radio" name="sec2_10" value="C"><span class="opt-text">C. fishes</span></label>
+<label><input type="radio" name="sec2_10" value="D"><span class="opt-text">D. fisies</span></label>
+</div>
+<div class="q-result" id="r_sec2_10"></div>
+<div class="explain" id="e_sec2_10"><strong>答案：fish</strong><br>单复数同形：fish → fish（同一种鱼）。注意：表示多种鱼类时也可用 fishes。</div>
+</div>
+<div class="q-item" id="q_sec2_11">
+<div class="q-head"><div class="q-num">11.</div><div class="q-text">man 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_11" value="A"><span class="opt-text">A. men</span></label>
+<label><input type="radio" name="sec2_11" value="B"><span class="opt-text">B. mans</span></label>
+<label><input type="radio" name="sec2_11" value="C"><span class="opt-text">C. oxs</span></label>
+<label><input type="radio" name="sec2_11" value="D"><span class="opt-text">D. manes</span></label>
+</div>
+<div class="q-result" id="r_sec2_11"></div>
+<div class="explain" id="e_sec2_11"><strong>答案：men</strong><br>不规则变化：man → men（a 变 e）。</div>
+</div>
+<div class="q-item" id="q_sec2_12">
+<div class="q-head"><div class="q-num">12.</div><div class="q-text">woman 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_12" value="A"><span class="opt-text">A. women</span></label>
+<label><input type="radio" name="sec2_12" value="B"><span class="opt-text">B. womans</span></label>
+<label><input type="radio" name="sec2_12" value="C"><span class="opt-text">C. oxs</span></label>
+<label><input type="radio" name="sec2_12" value="D"><span class="opt-text">D. womanes</span></label>
+</div>
+<div class="q-result" id="r_sec2_12"></div>
+<div class="explain" id="e_sec2_12"><strong>答案：women</strong><br>不规则变化：woman → women（a 变 e）。</div>
+</div>
+<div class="q-item" id="q_sec2_13">
+<div class="q-head"><div class="q-num">13.</div><div class="q-text">mouse 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_13" value="A"><span class="opt-text">A. mice</span></label>
+<label><input type="radio" name="sec2_13" value="B"><span class="opt-text">B. mouses</span></label>
+<label><input type="radio" name="sec2_13" value="C"><span class="opt-text">C. mouses</span></label>
+<label><input type="radio" name="sec2_13" value="D"><span class="opt-text">D. mices</span></label>
+</div>
+<div class="q-result" id="r_sec2_13"></div>
+<div class="explain" id="e_sec2_13"><strong>答案：mice</strong><br>不规则变化：mouse → mice（ous 变 ic）。</div>
+</div>
+<div class="q-item" id="q_sec2_14">
+<div class="q-head"><div class="q-num">14.</div><div class="q-text">ox 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_14" value="A"><span class="opt-text">A. oxen</span></label>
+<label><input type="radio" name="sec2_14" value="B"><span class="opt-text">B. oxs</span></label>
+<label><input type="radio" name="sec2_14" value="C"><span class="opt-text">C. oxs</span></label>
+<label><input type="radio" name="sec2_14" value="D"><span class="opt-text">D. oxes</span></label>
+</div>
+<div class="q-result" id="r_sec2_14"></div>
+<div class="explain" id="e_sec2_14"><strong>答案：oxen</strong><br>不规则变化：ox → oxen（公牛 ox 后面加 en）。</div>
+</div>
+<div class="q-item" id="q_sec2_15">
+<div class="q-head"><div class="q-num">15.</div><div class="q-text">Frenchman 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec2_15" value="A"><span class="opt-text">A. Frenchmen</span></label>
+<label><input type="radio" name="sec2_15" value="B"><span class="opt-text">B. Frenchmans</span></label>
+<label><input type="radio" name="sec2_15" value="C"><span class="opt-text">C. oxs</span></label>
+<label><input type="radio" name="sec2_15" value="D"><span class="opt-text">D. Frenchmanes</span></label>
+</div>
+<div class="q-result" id="r_sec2_15"></div>
+<div class="explain" id="e_sec2_15"><strong>答案：Frenchmen</strong><br>不规则变化：Frenchman → Frenchmen（英法变，a 变 e）。</div>
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-submit" id="btn_sec2" onclick="checkSection('sec2')">提交批改</button>
+<button class="btn btn-reset-sec" onclick="resetSection('sec2')">重做本题组</button>
+</div>
+</div>
+<div class="section" id="sec3">
+<div class="sec-header">
+<div class="sec-num" style="background:#27AE60">3</div>
+<div class="sec-title">三、名词单复数变化 — 写出下列名词的复数形式</div>
+<div class="sec-score wait" id="sec3_badge">未批改</div>
+</div>
+<div class="q-list"><div class="q-item" id="q_sec3_1">
+<div class="q-head"><div class="q-num">1.</div><div class="q-text">glass 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_1" value="A"><span class="opt-text">A. glasses</span></label>
+<label><input type="radio" name="sec3_1" value="B"><span class="opt-text">B. glasss</span></label>
+<label><input type="radio" name="sec3_1" value="C"><span class="opt-text">C. glasss</span></label>
+<label><input type="radio" name="sec3_1" value="D"><span class="opt-text">D. glass's</span></label>
+</div>
+<div class="q-result" id="r_sec3_1"></div>
+<div class="explain" id="e_sec3_1"><strong>答案：glasses</strong><br>es结尾加es。</div>
+</div>
+<div class="q-item" id="q_sec3_2">
+<div class="q-head"><div class="q-num">2.</div><div class="q-text">boy 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_2" value="A"><span class="opt-text">A. boys</span></label>
+<label><input type="radio" name="sec3_2" value="B"><span class="opt-text">B. boy</span></label>
+<label><input type="radio" name="sec3_2" value="C"><span class="opt-text">C. boyses</span></label>
+<label><input type="radio" name="sec3_2" value="D"><span class="opt-text">D. boy's</span></label>
+</div>
+<div class="q-result" id="r_sec3_2"></div>
+<div class="explain" id="e_sec3_2"><strong>答案：boys</strong><br>元音+y直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_3">
+<div class="q-head"><div class="q-num">3.</div><div class="q-text">duck 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_3" value="A"><span class="opt-text">A. ducks</span></label>
+<label><input type="radio" name="sec3_3" value="B"><span class="opt-text">B. duck</span></label>
+<label><input type="radio" name="sec3_3" value="C"><span class="opt-text">C. duckses</span></label>
+<label><input type="radio" name="sec3_3" value="D"><span class="opt-text">D. duck's</span></label>
+</div>
+<div class="q-result" id="r_sec3_3"></div>
+<div class="explain" id="e_sec3_3"><strong>答案：ducks</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_4">
+<div class="q-head"><div class="q-num">4.</div><div class="q-text">house 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_4" value="A"><span class="opt-text">A. houses</span></label>
+<label><input type="radio" name="sec3_4" value="B"><span class="opt-text">B. houses</span></label>
+<label><input type="radio" name="sec3_4" value="C"><span class="opt-text">C. houss</span></label>
+<label><input type="radio" name="sec3_4" value="D"><span class="opt-text">D. house's</span></label>
+</div>
+<div class="q-result" id="r_sec3_4"></div>
+<div class="explain" id="e_sec3_4"><strong>答案：houses</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_5">
+<div class="q-head"><div class="q-num">5.</div><div class="q-text">book 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_5" value="A"><span class="opt-text">A. books</span></label>
+<label><input type="radio" name="sec3_5" value="B"><span class="opt-text">B. book</span></label>
+<label><input type="radio" name="sec3_5" value="C"><span class="opt-text">C. bookses</span></label>
+<label><input type="radio" name="sec3_5" value="D"><span class="opt-text">D. book's</span></label>
+</div>
+<div class="q-result" id="r_sec3_5"></div>
+<div class="explain" id="e_sec3_5"><strong>答案：books</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_6">
+<div class="q-head"><div class="q-num">6.</div><div class="q-text">lady 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_6" value="A"><span class="opt-text">A. ladies</span></label>
+<label><input type="radio" name="sec3_6" value="B"><span class="opt-text">B. ladys</span></label>
+<label><input type="radio" name="sec3_6" value="C"><span class="opt-text">C. ladyes</span></label>
+<label><input type="radio" name="sec3_6" value="D"><span class="opt-text">D. ladys</span></label>
+</div>
+<div class="q-result" id="r_sec3_6"></div>
+<div class="explain" id="e_sec3_6"><strong>答案：ladies</strong><br>辅音+y变i加es。</div>
+</div>
+<div class="q-item" id="q_sec3_7">
+<div class="q-head"><div class="q-num">7.</div><div class="q-text">sheep 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_7" value="A"><span class="opt-text">A. sheep</span></label>
+<label><input type="radio" name="sec3_7" value="B"><span class="opt-text">B. sheeps</span></label>
+<label><input type="radio" name="sec3_7" value="C"><span class="opt-text">C. sheepes</span></label>
+<label><input type="radio" name="sec3_7" value="D"><span class="opt-text">D. sheeies</span></label>
+</div>
+<div class="q-result" id="r_sec3_7"></div>
+<div class="explain" id="e_sec3_7"><strong>答案：sheep</strong><br>单复数同形。</div>
+</div>
+<div class="q-item" id="q_sec3_8">
+<div class="q-head"><div class="q-num">8.</div><div class="q-text">deer 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_8" value="A"><span class="opt-text">A. deer</span></label>
+<label><input type="radio" name="sec3_8" value="B"><span class="opt-text">B. deers</span></label>
+<label><input type="radio" name="sec3_8" value="C"><span class="opt-text">C. deeres</span></label>
+<label><input type="radio" name="sec3_8" value="D"><span class="opt-text">D. deeren</span></label>
+</div>
+<div class="q-result" id="r_sec3_8"></div>
+<div class="explain" id="e_sec3_8"><strong>答案：deer</strong><br>单复数同形。</div>
+</div>
+<div class="q-item" id="q_sec3_9">
+<div class="q-head"><div class="q-num">9.</div><div class="q-text">child 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_9" value="A"><span class="opt-text">A. children</span></label>
+<label><input type="radio" name="sec3_9" value="B"><span class="opt-text">B. childs</span></label>
+<label><input type="radio" name="sec3_9" value="C"><span class="opt-text">C. childes</span></label>
+<label><input type="radio" name="sec3_9" value="D"><span class="opt-text">D. childrens</span></label>
+</div>
+<div class="q-result" id="r_sec3_9"></div>
+<div class="explain" id="e_sec3_9"><strong>答案：children</strong><br>不规则。</div>
+</div>
+<div class="q-item" id="q_sec3_10">
+<div class="q-head"><div class="q-num">10.</div><div class="q-text">foot 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_10" value="A"><span class="opt-text">A. feet</span></label>
+<label><input type="radio" name="sec3_10" value="B"><span class="opt-text">B. foots</span></label>
+<label><input type="radio" name="sec3_10" value="C"><span class="opt-text">C. footes</span></label>
+<label><input type="radio" name="sec3_10" value="D"><span class="opt-text">D. feets</span></label>
+</div>
+<div class="q-result" id="r_sec3_10"></div>
+<div class="explain" id="e_sec3_10"><strong>答案：feet</strong><br>不规则oo变ee。</div>
+</div>
+<div class="q-item" id="q_sec3_11">
+<div class="q-head"><div class="q-num">11.</div><div class="q-text">tomato 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_11" value="A"><span class="opt-text">A. tomatoes</span></label>
+<label><input type="radio" name="sec3_11" value="B"><span class="opt-text">B. tomatos</span></label>
+<label><input type="radio" name="sec3_11" value="C"><span class="opt-text">C. tomatos</span></label>
+<label><input type="radio" name="sec3_11" value="D"><span class="opt-text">D. tomato's</span></label>
+</div>
+<div class="q-result" id="r_sec3_11"></div>
+<div class="explain" id="e_sec3_11"><strong>答案：tomatoes</strong><br>有生命o加es。</div>
+</div>
+<div class="q-item" id="q_sec3_12">
+<div class="q-head"><div class="q-num">12.</div><div class="q-text">ox 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_12" value="A"><span class="opt-text">A. oxen</span></label>
+<label><input type="radio" name="sec3_12" value="B"><span class="opt-text">B. oxs</span></label>
+<label><input type="radio" name="sec3_12" value="C"><span class="opt-text">C. oxes</span></label>
+<label><input type="radio" name="sec3_12" value="D"><span class="opt-text">D. oxens</span></label>
+</div>
+<div class="q-result" id="r_sec3_12"></div>
+<div class="explain" id="e_sec3_12"><strong>答案：oxen</strong><br>不规则加en。</div>
+</div>
+<div class="q-item" id="q_sec3_13">
+<div class="q-head"><div class="q-num">13.</div><div class="q-text">desk 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_13" value="A"><span class="opt-text">A. desks</span></label>
+<label><input type="radio" name="sec3_13" value="B"><span class="opt-text">B. desk</span></label>
+<label><input type="radio" name="sec3_13" value="C"><span class="opt-text">C. deskses</span></label>
+<label><input type="radio" name="sec3_13" value="D"><span class="opt-text">D. desk's</span></label>
+</div>
+<div class="q-result" id="r_sec3_13"></div>
+<div class="explain" id="e_sec3_13"><strong>答案：desks</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_14">
+<div class="q-head"><div class="q-num">14.</div><div class="q-text">window 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_14" value="A"><span class="opt-text">A. windows</span></label>
+<label><input type="radio" name="sec3_14" value="B"><span class="opt-text">B. window</span></label>
+<label><input type="radio" name="sec3_14" value="C"><span class="opt-text">C. windowses</span></label>
+<label><input type="radio" name="sec3_14" value="D"><span class="opt-text">D. window's</span></label>
+</div>
+<div class="q-result" id="r_sec3_14"></div>
+<div class="explain" id="e_sec3_14"><strong>答案：windows</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_15">
+<div class="q-head"><div class="q-num">15.</div><div class="q-text">pencil 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_15" value="A"><span class="opt-text">A. pencils</span></label>
+<label><input type="radio" name="sec3_15" value="B"><span class="opt-text">B. pencil</span></label>
+<label><input type="radio" name="sec3_15" value="C"><span class="opt-text">C. pencilses</span></label>
+<label><input type="radio" name="sec3_15" value="D"><span class="opt-text">D. pencil's</span></label>
+</div>
+<div class="q-result" id="r_sec3_15"></div>
+<div class="explain" id="e_sec3_15"><strong>答案：pencils</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_16">
+<div class="q-head"><div class="q-num">16.</div><div class="q-text">dish 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_16" value="A"><span class="opt-text">A. dishes</span></label>
+<label><input type="radio" name="sec3_16" value="B"><span class="opt-text">B. dishs</span></label>
+<label><input type="radio" name="sec3_16" value="C"><span class="opt-text">C. dishs</span></label>
+<label><input type="radio" name="sec3_16" value="D"><span class="opt-text">D. dish's</span></label>
+</div>
+<div class="q-result" id="r_sec3_16"></div>
+<div class="explain" id="e_sec3_16"><strong>答案：dishes</strong><br>sh结尾加es。</div>
+</div>
+<div class="q-item" id="q_sec3_17">
+<div class="q-head"><div class="q-num">17.</div><div class="q-text">film 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_17" value="A"><span class="opt-text">A. films</span></label>
+<label><input type="radio" name="sec3_17" value="B"><span class="opt-text">B. film</span></label>
+<label><input type="radio" name="sec3_17" value="C"><span class="opt-text">C. filmses</span></label>
+<label><input type="radio" name="sec3_17" value="D"><span class="opt-text">D. film's</span></label>
+</div>
+<div class="q-result" id="r_sec3_17"></div>
+<div class="explain" id="e_sec3_17"><strong>答案：films</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_18">
+<div class="q-head"><div class="q-num">18.</div><div class="q-text">day 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_18" value="A"><span class="opt-text">A. days</span></label>
+<label><input type="radio" name="sec3_18" value="B"><span class="opt-text">B. day</span></label>
+<label><input type="radio" name="sec3_18" value="C"><span class="opt-text">C. dayses</span></label>
+<label><input type="radio" name="sec3_18" value="D"><span class="opt-text">D. day's</span></label>
+</div>
+<div class="q-result" id="r_sec3_18"></div>
+<div class="explain" id="e_sec3_18"><strong>答案：days</strong><br>元音+y直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_19">
+<div class="q-head"><div class="q-num">19.</div><div class="q-text">plane 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_19" value="A"><span class="opt-text">A. planes</span></label>
+<label><input type="radio" name="sec3_19" value="B"><span class="opt-text">B. planes</span></label>
+<label><input type="radio" name="sec3_19" value="C"><span class="opt-text">C. plans</span></label>
+<label><input type="radio" name="sec3_19" value="D"><span class="opt-text">D. plane's</span></label>
+</div>
+<div class="q-result" id="r_sec3_19"></div>
+<div class="explain" id="e_sec3_19"><strong>答案：planes</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_20">
+<div class="q-head"><div class="q-num">20.</div><div class="q-text">month 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_20" value="A"><span class="opt-text">A. months</span></label>
+<label><input type="radio" name="sec3_20" value="B"><span class="opt-text">B. month</span></label>
+<label><input type="radio" name="sec3_20" value="C"><span class="opt-text">C. monthses</span></label>
+<label><input type="radio" name="sec3_20" value="D"><span class="opt-text">D. month's</span></label>
+</div>
+<div class="q-result" id="r_sec3_20"></div>
+<div class="explain" id="e_sec3_20"><strong>答案：months</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_21">
+<div class="q-head"><div class="q-num">21.</div><div class="q-text">inch 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_21" value="A"><span class="opt-text">A. inches</span></label>
+<label><input type="radio" name="sec3_21" value="B"><span class="opt-text">B. inchs</span></label>
+<label><input type="radio" name="sec3_21" value="C"><span class="opt-text">C. inchs</span></label>
+<label><input type="radio" name="sec3_21" value="D"><span class="opt-text">D. inch's</span></label>
+</div>
+<div class="q-result" id="r_sec3_21"></div>
+<div class="explain" id="e_sec3_21"><strong>答案：inches</strong><br>ch结尾加es。</div>
+</div>
+<div class="q-item" id="q_sec3_22">
+<div class="q-head"><div class="q-num">22.</div><div class="q-text">village 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_22" value="A"><span class="opt-text">A. villages</span></label>
+<label><input type="radio" name="sec3_22" value="B"><span class="opt-text">B. villages</span></label>
+<label><input type="radio" name="sec3_22" value="C"><span class="opt-text">C. villags</span></label>
+<label><input type="radio" name="sec3_22" value="D"><span class="opt-text">D. village's</span></label>
+</div>
+<div class="q-result" id="r_sec3_22"></div>
+<div class="explain" id="e_sec3_22"><strong>答案：villages</strong><br>直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_23">
+<div class="q-head"><div class="q-num">23.</div><div class="q-text">city 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_23" value="A"><span class="opt-text">A. cities</span></label>
+<label><input type="radio" name="sec3_23" value="B"><span class="opt-text">B. citys</span></label>
+<label><input type="radio" name="sec3_23" value="C"><span class="opt-text">C. cityes</span></label>
+<label><input type="radio" name="sec3_23" value="D"><span class="opt-text">D. citys</span></label>
+</div>
+<div class="q-result" id="r_sec3_23"></div>
+<div class="explain" id="e_sec3_23"><strong>答案：cities</strong><br>辅音+y变i加es。</div>
+</div>
+<div class="q-item" id="q_sec3_24">
+<div class="q-head"><div class="q-num">24.</div><div class="q-text">family 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_24" value="A"><span class="opt-text">A. families</span></label>
+<label><input type="radio" name="sec3_24" value="B"><span class="opt-text">B. familys</span></label>
+<label><input type="radio" name="sec3_24" value="C"><span class="opt-text">C. familyes</span></label>
+<label><input type="radio" name="sec3_24" value="D"><span class="opt-text">D. familys</span></label>
+</div>
+<div class="q-result" id="r_sec3_24"></div>
+<div class="explain" id="e_sec3_24"><strong>答案：families</strong><br>辅音+y变i加es。</div>
+</div>
+<div class="q-item" id="q_sec3_25">
+<div class="q-head"><div class="q-num">25.</div><div class="q-text">knife 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_25" value="A"><span class="opt-text">A. knives</span></label>
+<label><input type="radio" name="sec3_25" value="B"><span class="opt-text">B. knifes</span></label>
+<label><input type="radio" name="sec3_25" value="C"><span class="opt-text">C. knifees</span></label>
+<label><input type="radio" name="sec3_25" value="D"><span class="opt-text">D. kniffes</span></label>
+</div>
+<div class="q-result" id="r_sec3_25"></div>
+<div class="explain" id="e_sec3_25"><strong>答案：knives</strong><br>fe变ves。</div>
+</div>
+<div class="q-item" id="q_sec3_26">
+<div class="q-head"><div class="q-num">26.</div><div class="q-text">people 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_26" value="A"><span class="opt-text">A. people</span></label>
+<label><input type="radio" name="sec3_26" value="B"><span class="opt-text">B. peoples</span></label>
+<label><input type="radio" name="sec3_26" value="C"><span class="opt-text">C. peoplees</span></label>
+<label><input type="radio" name="sec3_26" value="D"><span class="opt-text">D. peopleen</span></label>
+</div>
+<div class="q-result" id="r_sec3_26"></div>
+<div class="explain" id="e_sec3_26"><strong>答案：people</strong><br>单复数同形。</div>
+</div>
+<div class="q-item" id="q_sec3_27">
+<div class="q-head"><div class="q-num">27.</div><div class="q-text">man 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_27" value="A"><span class="opt-text">A. men</span></label>
+<label><input type="radio" name="sec3_27" value="B"><span class="opt-text">B. mans</span></label>
+<label><input type="radio" name="sec3_27" value="C"><span class="opt-text">C. mens</span></label>
+<label><input type="radio" name="sec3_27" value="D"><span class="opt-text">D. manes</span></label>
+</div>
+<div class="q-result" id="r_sec3_27"></div>
+<div class="explain" id="e_sec3_27"><strong>答案：men</strong><br>不规则a变e。</div>
+</div>
+<div class="q-item" id="q_sec3_28">
+<div class="q-head"><div class="q-num">28.</div><div class="q-text">thief 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_28" value="A"><span class="opt-text">A. thieves</span></label>
+<label><input type="radio" name="sec3_28" value="B"><span class="opt-text">B. thiefs</span></label>
+<label><input type="radio" name="sec3_28" value="C"><span class="opt-text">C. thiefes</span></label>
+<label><input type="radio" name="sec3_28" value="D"><span class="opt-text">D. thieffs</span></label>
+</div>
+<div class="q-result" id="r_sec3_28"></div>
+<div class="explain" id="e_sec3_28"><strong>答案：thieves</strong><br>f变ves。</div>
+</div>
+<div class="q-item" id="q_sec3_29">
+<div class="q-head"><div class="q-num">29.</div><div class="q-text">Chinese 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_29" value="A"><span class="opt-text">A. Chinese</span></label>
+<label><input type="radio" name="sec3_29" value="B"><span class="opt-text">B. Chineses</span></label>
+<label><input type="radio" name="sec3_29" value="C"><span class="opt-text">C. Chinesees</span></label>
+<label><input type="radio" name="sec3_29" value="D"><span class="opt-text">D. Chineseen</span></label>
+</div>
+<div class="q-result" id="r_sec3_29"></div>
+<div class="explain" id="e_sec3_29"><strong>答案：Chinese</strong><br>单复数同形。</div>
+</div>
+<div class="q-item" id="q_sec3_30">
+<div class="q-head"><div class="q-num">30.</div><div class="q-text">monkey 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_30" value="A"><span class="opt-text">A. monkeys</span></label>
+<label><input type="radio" name="sec3_30" value="B"><span class="opt-text">B. monkey</span></label>
+<label><input type="radio" name="sec3_30" value="C"><span class="opt-text">C. monkeyses</span></label>
+<label><input type="radio" name="sec3_30" value="D"><span class="opt-text">D. monkey's</span></label>
+</div>
+<div class="q-result" id="r_sec3_30"></div>
+<div class="explain" id="e_sec3_30"><strong>答案：monkeys</strong><br>元音+y直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_31">
+<div class="q-head"><div class="q-num">31.</div><div class="q-text">I 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_31" value="A"><span class="opt-text">A. we</span></label>
+<label><input type="radio" name="sec3_31" value="B"><span class="opt-text">B. Is</span></label>
+<label><input type="radio" name="sec3_31" value="C"><span class="opt-text">C. me</span></label>
+<label><input type="radio" name="sec3_31" value="D"><span class="opt-text">D. us</span></label>
+</div>
+<div class="q-result" id="r_sec3_31"></div>
+<div class="explain" id="e_sec3_31"><strong>答案：we</strong><br>人称代词特殊变化。</div>
+</div>
+<div class="q-item" id="q_sec3_32">
+<div class="q-head"><div class="q-num">32.</div><div class="q-text">him 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_32" value="A"><span class="opt-text">A. them</span></label>
+<label><input type="radio" name="sec3_32" value="B"><span class="opt-text">B. hims</span></label>
+<label><input type="radio" name="sec3_32" value="C"><span class="opt-text">C. he</span></label>
+<label><input type="radio" name="sec3_32" value="D"><span class="opt-text">D. his</span></label>
+</div>
+<div class="q-result" id="r_sec3_32"></div>
+<div class="explain" id="e_sec3_32"><strong>答案：them</strong><br>人称代词特殊变化。</div>
+</div>
+<div class="q-item" id="q_sec3_33">
+<div class="q-head"><div class="q-num">33.</div><div class="q-text">this 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_33" value="A"><span class="opt-text">A. these</span></label>
+<label><input type="radio" name="sec3_33" value="B"><span class="opt-text">B. thises</span></label>
+<label><input type="radio" name="sec3_33" value="C"><span class="opt-text">C. thoses</span></label>
+<label><input type="radio" name="sec3_33" value="D"><span class="opt-text">D. those</span></label>
+</div>
+<div class="q-result" id="r_sec3_33"></div>
+<div class="explain" id="e_sec3_33"><strong>答案：these</strong><br>指示代词特殊变化。</div>
+</div>
+<div class="q-item" id="q_sec3_34">
+<div class="q-head"><div class="q-num">34.</div><div class="q-text">her 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_34" value="A"><span class="opt-text">A. them</span></label>
+<label><input type="radio" name="sec3_34" value="B"><span class="opt-text">B. hers</span></label>
+<label><input type="radio" name="sec3_34" value="C"><span class="opt-text">C. shes</span></label>
+<label><input type="radio" name="sec3_34" value="D"><span class="opt-text">D. her</span></label>
+</div>
+<div class="q-result" id="r_sec3_34"></div>
+<div class="explain" id="e_sec3_34"><strong>答案：them</strong><br>人称代词特殊变化。</div>
+</div>
+<div class="q-item" id="q_sec3_35">
+<div class="q-head"><div class="q-num">35.</div><div class="q-text">watch 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_35" value="A"><span class="opt-text">A. watches</span></label>
+<label><input type="radio" name="sec3_35" value="B"><span class="opt-text">B. watchs</span></label>
+<label><input type="radio" name="sec3_35" value="C"><span class="opt-text">C. watchs</span></label>
+<label><input type="radio" name="sec3_35" value="D"><span class="opt-text">D. watch's</span></label>
+</div>
+<div class="q-result" id="r_sec3_35"></div>
+<div class="explain" id="e_sec3_35"><strong>答案：watches</strong><br>ch结尾加es。</div>
+</div>
+<div class="q-item" id="q_sec3_36">
+<div class="q-head"><div class="q-num">36.</div><div class="q-text">child 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_36" value="A"><span class="opt-text">A. children</span></label>
+<label><input type="radio" name="sec3_36" value="B"><span class="opt-text">B. childs</span></label>
+<label><input type="radio" name="sec3_36" value="C"><span class="opt-text">C. childes</span></label>
+<label><input type="radio" name="sec3_36" value="D"><span class="opt-text">D. childrens</span></label>
+</div>
+<div class="q-result" id="r_sec3_36"></div>
+<div class="explain" id="e_sec3_36"><strong>答案：children</strong><br>不规则。</div>
+</div>
+<div class="q-item" id="q_sec3_37">
+<div class="q-head"><div class="q-num">37.</div><div class="q-text">photo 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_37" value="A"><span class="opt-text">A. photos</span></label>
+<label><input type="radio" name="sec3_37" value="B"><span class="opt-text">B. photo</span></label>
+<label><input type="radio" name="sec3_37" value="C"><span class="opt-text">C. photoses</span></label>
+<label><input type="radio" name="sec3_37" value="D"><span class="opt-text">D. photo's</span></label>
+</div>
+<div class="q-result" id="r_sec3_37"></div>
+<div class="explain" id="e_sec3_37"><strong>答案：photos</strong><br>无生命o加s。</div>
+</div>
+<div class="q-item" id="q_sec3_38">
+<div class="q-head"><div class="q-num">38.</div><div class="q-text">diary 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_38" value="A"><span class="opt-text">A. diaries</span></label>
+<label><input type="radio" name="sec3_38" value="B"><span class="opt-text">B. diarys</span></label>
+<label><input type="radio" name="sec3_38" value="C"><span class="opt-text">C. diaryes</span></label>
+<label><input type="radio" name="sec3_38" value="D"><span class="opt-text">D. diarys</span></label>
+</div>
+<div class="q-result" id="r_sec3_38"></div>
+<div class="explain" id="e_sec3_38"><strong>答案：diaries</strong><br>辅音+y变i加es。</div>
+</div>
+<div class="q-item" id="q_sec3_39">
+<div class="q-head"><div class="q-num">39.</div><div class="q-text">day 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_39" value="A"><span class="opt-text">A. days</span></label>
+<label><input type="radio" name="sec3_39" value="B"><span class="opt-text">B. day</span></label>
+<label><input type="radio" name="sec3_39" value="C"><span class="opt-text">C. dayses</span></label>
+<label><input type="radio" name="sec3_39" value="D"><span class="opt-text">D. day's</span></label>
+</div>
+<div class="q-result" id="r_sec3_39"></div>
+<div class="explain" id="e_sec3_39"><strong>答案：days</strong><br>元音+y直接加s。</div>
+</div>
+<div class="q-item" id="q_sec3_40">
+<div class="q-head"><div class="q-num">40.</div><div class="q-text">foot 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_40" value="A"><span class="opt-text">A. feet</span></label>
+<label><input type="radio" name="sec3_40" value="B"><span class="opt-text">B. foots</span></label>
+<label><input type="radio" name="sec3_40" value="C"><span class="opt-text">C. footes</span></label>
+<label><input type="radio" name="sec3_40" value="D"><span class="opt-text">D. feets</span></label>
+</div>
+<div class="q-result" id="r_sec3_40"></div>
+<div class="explain" id="e_sec3_40"><strong>答案：feet</strong><br>不规则oo变ee。</div>
+</div>
+<div class="q-item" id="q_sec3_41">
+<div class="q-head"><div class="q-num">41.</div><div class="q-text">bus 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_41" value="A"><span class="opt-text">A. buses</span></label>
+<label><input type="radio" name="sec3_41" value="B"><span class="opt-text">B. buss</span></label>
+<label><input type="radio" name="sec3_41" value="C"><span class="opt-text">C. buss</span></label>
+<label><input type="radio" name="sec3_41" value="D"><span class="opt-text">D. bus's</span></label>
+</div>
+<div class="q-result" id="r_sec3_41"></div>
+<div class="explain" id="e_sec3_41"><strong>答案：buses</strong><br>s结尾加es。</div>
+</div>
+<div class="q-item" id="q_sec3_42">
+<div class="q-head"><div class="q-num">42.</div><div class="q-text">dress 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_42" value="A"><span class="opt-text">A. dresses</span></label>
+<label><input type="radio" name="sec3_42" value="B"><span class="opt-text">B. dresss</span></label>
+<label><input type="radio" name="sec3_42" value="C"><span class="opt-text">C. dresss</span></label>
+<label><input type="radio" name="sec3_42" value="D"><span class="opt-text">D. dress's</span></label>
+</div>
+<div class="q-result" id="r_sec3_42"></div>
+<div class="explain" id="e_sec3_42"><strong>答案：dresses</strong><br>s结尾加es。</div>
+</div>
+<div class="q-item" id="q_sec3_43">
+<div class="q-head"><div class="q-num">43.</div><div class="q-text">tooth 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_43" value="A"><span class="opt-text">A. teeth</span></label>
+<label><input type="radio" name="sec3_43" value="B"><span class="opt-text">B. tooths</span></label>
+<label><input type="radio" name="sec3_43" value="C"><span class="opt-text">C. toothes</span></label>
+<label><input type="radio" name="sec3_43" value="D"><span class="opt-text">D. teeths</span></label>
+</div>
+<div class="q-result" id="r_sec3_43"></div>
+<div class="explain" id="e_sec3_43"><strong>答案：teeth</strong><br>不规则oo变ee。</div>
+</div>
+<div class="q-item" id="q_sec3_44">
+<div class="q-head"><div class="q-num">44.</div><div class="q-text">sheep 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_44" value="A"><span class="opt-text">A. sheep</span></label>
+<label><input type="radio" name="sec3_44" value="B"><span class="opt-text">B. sheeps</span></label>
+<label><input type="radio" name="sec3_44" value="C"><span class="opt-text">C. sheepes</span></label>
+<label><input type="radio" name="sec3_44" value="D"><span class="opt-text">D. sheeies</span></label>
+</div>
+<div class="q-result" id="r_sec3_44"></div>
+<div class="explain" id="e_sec3_44"><strong>答案：sheep</strong><br>单复数同形。</div>
+</div>
+<div class="q-item" id="q_sec3_45">
+<div class="q-head"><div class="q-num">45.</div><div class="q-text">box 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_45" value="A"><span class="opt-text">A. boxes</span></label>
+<label><input type="radio" name="sec3_45" value="B"><span class="opt-text">B. boxs</span></label>
+<label><input type="radio" name="sec3_45" value="C"><span class="opt-text">C. boxs</span></label>
+<label><input type="radio" name="sec3_45" value="D"><span class="opt-text">D. box's</span></label>
+</div>
+<div class="q-result" id="r_sec3_45"></div>
+<div class="explain" id="e_sec3_45"><strong>答案：boxes</strong><br>x结尾加es。</div>
+</div>
+<div class="q-item" id="q_sec3_46">
+<div class="q-head"><div class="q-num">46.</div><div class="q-text">strawberry 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_46" value="A"><span class="opt-text">A. strawberries</span></label>
+<label><input type="radio" name="sec3_46" value="B"><span class="opt-text">B. strawberrys</span></label>
+<label><input type="radio" name="sec3_46" value="C"><span class="opt-text">C. strawberryes</span></label>
+<label><input type="radio" name="sec3_46" value="D"><span class="opt-text">D. strawberrys</span></label>
+</div>
+<div class="q-result" id="r_sec3_46"></div>
+<div class="explain" id="e_sec3_46"><strong>答案：strawberries</strong><br>辅音+y变i加es。</div>
+</div>
+<div class="q-item" id="q_sec3_47">
+<div class="q-head"><div class="q-num">47.</div><div class="q-text">thief 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_47" value="A"><span class="opt-text">A. thieves</span></label>
+<label><input type="radio" name="sec3_47" value="B"><span class="opt-text">B. thiefs</span></label>
+<label><input type="radio" name="sec3_47" value="C"><span class="opt-text">C. thiefes</span></label>
+<label><input type="radio" name="sec3_47" value="D"><span class="opt-text">D. thieffs</span></label>
+</div>
+<div class="q-result" id="r_sec3_47"></div>
+<div class="explain" id="e_sec3_47"><strong>答案：thieves</strong><br>f变ves。</div>
+</div>
+<div class="q-item" id="q_sec3_48">
+<div class="q-head"><div class="q-num">48.</div><div class="q-text">yo-yo 的复数形式是？</div></div>
+<div class="radio-group"><label><input type="radio" name="sec3_48" value="A"><span class="opt-text">A. yo-yos</span></label>
+<label><input type="radio" name="sec3_48" value="B"><span class="opt-text">B. yo-yo</span></label>
+<label><input type="radio" name="sec3_48" value="C"><span class="opt-text">C. yo-yoses</span></label>
+<label><input type="radio" name="sec3_48" value="D"><span class="opt-text">D. yo-yo's</span></label>
+</div>
+<div class="q-result" id="r_sec3_48"></div>
+<div class="explain" id="e_sec3_48"><strong>答案：yo-yos</strong><br>复合词直接加s。</div>
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-submit" id="btn_sec3" onclick="checkSection('sec3')">提交批改</button>
+<button class="btn btn-reset-sec" onclick="resetSection('sec3')">重做本题组</button>
+</div>
+</div>
+<div class="section" id="sec4">
+<div class="sec-header">
+<div class="sec-num" style="background:#E67E22">4</div>
+<div class="sec-title">四、用所给单词的复数正确形式填空</div>
+<div class="sec-score wait" id="sec4_badge">未批改</div>
+</div>
+<div class="q-list"><div class="q-item" id="q_sec4_1">
+<div class="q-head"><div class="q-num">1.</div><div class="q-text">There are three _________(chair) in the classroom.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_1" value="A"><span class="opt-text">A. chairs</span></label>
+<label><input type="radio" name="sec4_1" value="B"><span class="opt-text">B. chair</span></label>
+<label><input type="radio" name="sec4_1" value="C"><span class="opt-text">C. chairses</span></label>
+<label><input type="radio" name="sec4_1" value="D"><span class="opt-text">D. chairsies</span></label>
+</div>
+<div class="q-result" id="r_sec4_1"></div>
+<div class="explain" id="e_sec4_1"><strong>答案：chairs</strong><br>chair 直接加 s。</div>
+</div>
+<div class="q-item" id="q_sec4_2">
+<div class="q-head"><div class="q-num">2.</div><div class="q-text">These ________(tomato) are red.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_2" value="A"><span class="opt-text">A. tomatoes</span></label>
+<label><input type="radio" name="sec4_2" value="B"><span class="opt-text">B. tomatos</span></label>
+<label><input type="radio" name="sec4_2" value="C"><span class="opt-text">C. tomatoe</span></label>
+<label><input type="radio" name="sec4_2" value="D"><span class="opt-text">D. tomatoess</span></label>
+</div>
+<div class="q-result" id="r_sec4_2"></div>
+<div class="explain" id="e_sec4_2"><strong>答案：tomatoes</strong><br>tomato 有生命，o 结尾加 es。</div>
+</div>
+<div class="q-item" id="q_sec4_3">
+<div class="q-head"><div class="q-num">3.</div><div class="q-text">My brother looks after two _________(baby).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_3" value="A"><span class="opt-text">A. babies</span></label>
+<label><input type="radio" name="sec4_3" value="B"><span class="opt-text">B. babs</span></label>
+<label><input type="radio" name="sec4_3" value="C"><span class="opt-text">C. babes</span></label>
+<label><input type="radio" name="sec4_3" value="D"><span class="opt-text">D. babys</span></label>
+</div>
+<div class="q-result" id="r_sec4_3"></div>
+<div class="explain" id="e_sec4_3"><strong>答案：babies</strong><br>baby 辅音+y 结尾，变 y 为 i 加 es。</div>
+</div>
+<div class="q-item" id="q_sec4_4">
+<div class="q-head"><div class="q-num">4.</div><div class="q-text">My father likes to eat _________(potato).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_4" value="A"><span class="opt-text">A. potatoes</span></label>
+<label><input type="radio" name="sec4_4" value="B"><span class="opt-text">B. potatos</span></label>
+<label><input type="radio" name="sec4_4" value="C"><span class="opt-text">C. potatoe</span></label>
+<label><input type="radio" name="sec4_4" value="D"><span class="opt-text">D. potatoess</span></label>
+</div>
+<div class="q-result" id="r_sec4_4"></div>
+<div class="explain" id="e_sec4_4"><strong>答案：potatoes</strong><br>potato 有生命，o 结尾加 es。</div>
+</div>
+<div class="q-item" id="q_sec4_5">
+<div class="q-head"><div class="q-num">5.</div><div class="q-text">Chinese _________(people) like to eat noodles.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_5" value="A"><span class="opt-text">A. people</span></label>
+<label><input type="radio" name="sec4_5" value="B"><span class="opt-text">B. peoples</span></label>
+<label><input type="radio" name="sec4_5" value="C"><span class="opt-text">C. peoplees</span></label>
+<label><input type="radio" name="sec4_5" value="D"><span class="opt-text">D. peoplies</span></label>
+</div>
+<div class="q-result" id="r_sec4_5"></div>
+<div class="explain" id="e_sec4_5"><strong>答案：people</strong><br>people 单复数同形。</div>
+</div>
+<div class="q-item" id="q_sec4_6">
+<div class="q-head"><div class="q-num">6.</div><div class="q-text">I have a lot of _________(toy) in my bedroom.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_6" value="A"><span class="opt-text">A. toys</span></label>
+<label><input type="radio" name="sec4_6" value="B"><span class="opt-text">B. toy</span></label>
+<label><input type="radio" name="sec4_6" value="C"><span class="opt-text">C. toyses</span></label>
+<label><input type="radio" name="sec4_6" value="D"><span class="opt-text">D. toysies</span></label>
+</div>
+<div class="q-result" id="r_sec4_6"></div>
+<div class="explain" id="e_sec4_6"><strong>答案：toys</strong><br>toy 元音+y 结尾，直接加 s。</div>
+</div>
+<div class="q-item" id="q_sec4_7">
+<div class="q-head"><div class="q-num">7.</div><div class="q-text">I help my mother wash _________(dish) in the kitchen.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_7" value="A"><span class="opt-text">A. dishes</span></label>
+<label><input type="radio" name="sec4_7" value="B"><span class="opt-text">B. dishs</span></label>
+<label><input type="radio" name="sec4_7" value="C"><span class="opt-text">C. dishe</span></label>
+<label><input type="radio" name="sec4_7" value="D"><span class="opt-text">D. dishess</span></label>
+</div>
+<div class="q-result" id="r_sec4_7"></div>
+<div class="explain" id="e_sec4_7"><strong>答案：dishes</strong><br>dish 以 sh 结尾加 es。</div>
+</div>
+<div class="q-item" id="q_sec4_8">
+<div class="q-head"><div class="q-num">8.</div><div class="q-text">I have two ____________(pencil-box).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_8" value="A"><span class="opt-text">A. pencil-boxes</span></label>
+<label><input type="radio" name="sec4_8" value="B"><span class="opt-text">B. pencil-boxs</span></label>
+<label><input type="radio" name="sec4_8" value="C"><span class="opt-text">C. pencil-boxe</span></label>
+<label><input type="radio" name="sec4_8" value="D"><span class="opt-text">D. pencil-boxess</span></label>
+</div>
+<div class="q-result" id="r_sec4_8"></div>
+<div class="explain" id="e_sec4_8"><strong>答案：pencil-boxes</strong><br>pencil-box 以 x 结尾加 es。</div>
+</div>
+<div class="q-item" id="q_sec4_9">
+<div class="q-head"><div class="q-num">9.</div><div class="q-text">There are some _________(bus) in the street.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_9" value="A"><span class="opt-text">A. buses</span></label>
+<label><input type="radio" name="sec4_9" value="B"><span class="opt-text">B. buss</span></label>
+<label><input type="radio" name="sec4_9" value="C"><span class="opt-text">C. buse</span></label>
+<label><input type="radio" name="sec4_9" value="D"><span class="opt-text">D. busess</span></label>
+</div>
+<div class="q-result" id="r_sec4_9"></div>
+<div class="explain" id="e_sec4_9"><strong>答案：buses</strong><br>bus 以 s 结尾加 es。</div>
+</div>
+<div class="q-item" id="q_sec4_10">
+<div class="q-head"><div class="q-num">10.</div><div class="q-text">Peter has eight _________(foot).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_10" value="A"><span class="opt-text">A. feet</span></label>
+<label><input type="radio" name="sec4_10" value="B"><span class="opt-text">B. foots</span></label>
+<label><input type="radio" name="sec4_10" value="C"><span class="opt-text">C. footes</span></label>
+<label><input type="radio" name="sec4_10" value="D"><span class="opt-text">D. feets</span></label>
+</div>
+<div class="q-result" id="r_sec4_10"></div>
+<div class="explain" id="e_sec4_10"><strong>答案：feet</strong><br>foot 不规则变化，oo 变 ee。</div>
+</div>
+<div class="q-item" id="q_sec4_11">
+<div class="q-head"><div class="q-num">11.</div><div class="q-text">Linda has three _________(tooth).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_11" value="A"><span class="opt-text">A. teeth</span></label>
+<label><input type="radio" name="sec4_11" value="B"><span class="opt-text">B. tooths</span></label>
+<label><input type="radio" name="sec4_11" value="C"><span class="opt-text">C. toothes</span></label>
+<label><input type="radio" name="sec4_11" value="D"><span class="opt-text">D. teeths</span></label>
+</div>
+<div class="q-result" id="r_sec4_11"></div>
+<div class="explain" id="e_sec4_11"><strong>答案：teeth</strong><br>tooth 不规则变化，oo 变 ee。</div>
+</div>
+<div class="q-item" id="q_sec4_12">
+<div class="q-head"><div class="q-num">12.</div><div class="q-text">There are some _________(child) in the garden.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_12" value="A"><span class="opt-text">A. children</span></label>
+<label><input type="radio" name="sec4_12" value="B"><span class="opt-text">B. childs</span></label>
+<label><input type="radio" name="sec4_12" value="C"><span class="opt-text">C. childes</span></label>
+<label><input type="radio" name="sec4_12" value="D"><span class="opt-text">D. childrens</span></label>
+</div>
+<div class="q-result" id="r_sec4_12"></div>
+<div class="explain" id="e_sec4_12"><strong>答案：children</strong><br>child 不规则变化，加 ren。</div>
+</div>
+<div class="q-item" id="q_sec4_13">
+<div class="q-head"><div class="q-num">13.</div><div class="q-text">My teachers are _________(man).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_13" value="A"><span class="opt-text">A. men</span></label>
+<label><input type="radio" name="sec4_13" value="B"><span class="opt-text">B. mans</span></label>
+<label><input type="radio" name="sec4_13" value="C"><span class="opt-text">C. mens</span></label>
+<label><input type="radio" name="sec4_13" value="D"><span class="opt-text">D. manes</span></label>
+</div>
+<div class="q-result" id="r_sec4_13"></div>
+<div class="explain" id="e_sec4_13"><strong>答案：men</strong><br>man 不规则变化，a 变 e。</div>
+</div>
+<div class="q-item" id="q_sec4_14">
+<div class="q-head"><div class="q-num">14.</div><div class="q-text">Tom and King are _________(boy).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_14" value="A"><span class="opt-text">A. boys</span></label>
+<label><input type="radio" name="sec4_14" value="B"><span class="opt-text">B. boy</span></label>
+<label><input type="radio" name="sec4_14" value="C"><span class="opt-text">C. boyses</span></label>
+<label><input type="radio" name="sec4_14" value="D"><span class="opt-text">D. boysies</span></label>
+</div>
+<div class="q-result" id="r_sec4_14"></div>
+<div class="explain" id="e_sec4_14"><strong>答案：boys</strong><br>boy 元音+y 结尾，直接加 s。</div>
+</div>
+<div class="q-item" id="q_sec4_15">
+<div class="q-head"><div class="q-num">15.</div><div class="q-text">I have two _________ (knife).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_15" value="A"><span class="opt-text">A. knives</span></label>
+<label><input type="radio" name="sec4_15" value="B"><span class="opt-text">B. knivs</span></label>
+<label><input type="radio" name="sec4_15" value="C"><span class="opt-text">C. knive</span></label>
+<label><input type="radio" name="sec4_15" value="D"><span class="opt-text">D. knivess</span></label>
+</div>
+<div class="q-result" id="r_sec4_15"></div>
+<div class="explain" id="e_sec4_15"><strong>答案：knives</strong><br>knife 以 fe 结尾，变 fe 为 v 加 es。</div>
+</div>
+<div class="q-item" id="q_sec4_16">
+<div class="q-head"><div class="q-num">16.</div><div class="q-text">There are many _________ here. (box)</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_16" value="A"><span class="opt-text">A. boxes</span></label>
+<label><input type="radio" name="sec4_16" value="B"><span class="opt-text">B. boxs</span></label>
+<label><input type="radio" name="sec4_16" value="C"><span class="opt-text">C. boxe</span></label>
+<label><input type="radio" name="sec4_16" value="D"><span class="opt-text">D. boxess</span></label>
+</div>
+<div class="q-result" id="r_sec4_16"></div>
+<div class="explain" id="e_sec4_16"><strong>答案：boxes</strong><br>box 以 x 结尾加 es。</div>
+</div>
+<div class="q-item" id="q_sec4_17">
+<div class="q-head"><div class="q-num">17.</div><div class="q-text">There are many _________ on the road. (bus)</div></div>
+<div class="radio-group"><label><input type="radio" name="sec4_17" value="A"><span class="opt-text">A. buses</span></label>
+<label><input type="radio" name="sec4_17" value="B"><span class="opt-text">B. buss</span></label>
+<label><input type="radio" name="sec4_17" value="C"><span class="opt-text">C. buse</span></label>
+<label><input type="radio" name="sec4_17" value="D"><span class="opt-text">D. busess</span></label>
+</div>
+<div class="q-result" id="r_sec4_17"></div>
+<div class="explain" id="e_sec4_17"><strong>答案：buses</strong><br>bus 以 s 结尾加 es。</div>
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-submit" id="btn_sec4" onclick="checkSection('sec4')">提交批改</button>
+<button class="btn btn-reset-sec" onclick="resetSection('sec4')">重做本题组</button>
+</div>
+</div>
+<div class="section" id="sec5">
+<div class="sec-header">
+<div class="sec-num" style="background:#E74C3C">5</div>
+<div class="sec-title">五、圈出正确的答案</div>
+<div class="sec-score wait" id="sec5_badge">未批改</div>
+</div>
+<div class="q-list"><div class="q-item" id="q_sec5_1">
+<div class="q-head"><div class="q-num">1.</div><div class="q-text">How many (radioes / radios) can you see?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec5_1" value="A"><span class="opt-text">A. radios</span></label>
+<label><input type="radio" name="sec5_1" value="B"><span class="opt-text">B. radioes</span></label>
+<label><input type="radio" name="sec5_1" value="C"><span class="opt-text">C. radio</span></label>
+<label><input type="radio" name="sec5_1" value="D"><span class="opt-text">D. radioses</span></label>
+</div>
+<div class="q-result" id="r_sec5_1"></div>
+<div class="explain" id="e_sec5_1"><strong>答案：radios</strong><br>以元音+o 结尾直接加 s：radio → radios。</div>
+</div>
+<div class="q-item" id="q_sec5_2">
+<div class="q-head"><div class="q-num">2.</div><div class="q-text">There are 36 (boys / boies) in my class.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec5_2" value="A"><span class="opt-text">A. boys</span></label>
+<label><input type="radio" name="sec5_2" value="B"><span class="opt-text">B. boies</span></label>
+<label><input type="radio" name="sec5_2" value="C"><span class="opt-text">C. boy</span></label>
+<label><input type="radio" name="sec5_2" value="D"><span class="opt-text">D. boyes</span></label>
+</div>
+<div class="q-result" id="r_sec5_2"></div>
+<div class="explain" id="e_sec5_2"><strong>答案：boys</strong><br>boy 元音+y 结尾，直接加 s，不要变 y 为 i。</div>
+</div>
+<div class="q-item" id="q_sec5_3">
+<div class="q-head"><div class="q-num">3.</div><div class="q-text">Look at those (sheeps / sheep).</div></div>
+<div class="radio-group"><label><input type="radio" name="sec5_3" value="A"><span class="opt-text">A. sheeps</span></label>
+<label><input type="radio" name="sec5_3" value="B"><span class="opt-text">B. sheep</span></label>
+<label><input type="radio" name="sec5_3" value="C"><span class="opt-text">C. sheepes</span></label>
+<label><input type="radio" name="sec5_3" value="D"><span class="opt-text">D. sheepies</span></label>
+</div>
+<div class="q-result" id="r_sec5_3"></div>
+<div class="explain" id="e_sec5_3"><strong>答案：sheep</strong><br>sheep 单复数同形，不加 s。</div>
+</div>
+<div class="q-item" id="q_sec5_4">
+<div class="q-head"><div class="q-num">4.</div><div class="q-text">I don't want (a / an) old cup.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec5_4" value="A"><span class="opt-text">A. a</span></label>
+<label><input type="radio" name="sec5_4" value="B"><span class="opt-text">B. an</span></label>
+<label><input type="radio" name="sec5_4" value="C"><span class="opt-text">C. the</span></label>
+<label><input type="radio" name="sec5_4" value="D"><span class="opt-text">D. /</span></label>
+</div>
+<div class="q-result" id="r_sec5_4"></div>
+<div class="explain" id="e_sec5_4"><strong>答案：an</strong><br>old 以元音音素开头，用 an。</div>
+</div>
+<div class="q-item" id="q_sec5_5">
+<div class="q-head"><div class="q-num">5.</div><div class="q-text">Give me that (box / boxes), please.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec5_5" value="A"><span class="opt-text">A. box</span></label>
+<label><input type="radio" name="sec5_5" value="B"><span class="opt-text">B. boxes</span></label>
+<label><input type="radio" name="sec5_5" value="C"><span class="opt-text">C. boxs</span></label>
+<label><input type="radio" name="sec5_5" value="D"><span class="opt-text">D. boxies</span></label>
+</div>
+<div class="q-result" id="r_sec5_5"></div>
+<div class="explain" id="e_sec5_5"><strong>答案：box</strong><br>that 后接单数名词 box，不是 boxes。</div>
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-submit" id="btn_sec5" onclick="checkSection('sec5')">提交批改</button>
+<button class="btn btn-reset-sec" onclick="resetSection('sec5')">重做本题组</button>
+</div>
+</div>
+<div class="section" id="sec6">
+<div class="sec-header">
+<div class="sec-num" style="background:#1ABC9C">6</div>
+<div class="sec-title">六、单选题</div>
+<div class="sec-score wait" id="sec6_badge">未批改</div>
+</div>
+<div class="q-list"><div class="q-item" id="q_sec6_1">
+<div class="q-head"><div class="q-num">1.</div><div class="q-text">Here _______ a glass of _______ for you.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_1" value="A"><span class="opt-text">A. is; juices</span></label>
+<label><input type="radio" name="sec6_1" value="B"><span class="opt-text">B. is; juice</span></label>
+<label><input type="radio" name="sec6_1" value="C"><span class="opt-text">C. are; juice</span></label>
+<label><input type="radio" name="sec6_1" value="D"><span class="opt-text">D. are; juices</span></label>
+</div>
+<div class="q-result" id="r_sec6_1"></div>
+<div class="explain" id="e_sec6_1"><strong>答案：B</strong><br>a glass of 视为单数用 is；juice 不可数不加 s。</div>
+</div>
+<div class="q-item" id="q_sec6_2">
+<div class="q-head"><div class="q-num">2.</div><div class="q-text">Sam ate two ________ last night.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_2" value="A"><span class="opt-text">A. sandwich</span></label>
+<label><input type="radio" name="sec6_2" value="B"><span class="opt-text">B. sandwichs</span></label>
+<label><input type="radio" name="sec6_2" value="C"><span class="opt-text">C. sandwiches</span></label>
+<label><input type="radio" name="sec6_2" value="D"><span class="opt-text">D. sandwichies</span></label>
+</div>
+<div class="q-result" id="r_sec6_2"></div>
+<div class="explain" id="e_sec6_2"><strong>答案：C</strong><br>sandwich 以 ch 结尾加 es。</div>
+</div>
+<div class="q-item" id="q_sec6_3">
+<div class="q-head"><div class="q-num">3.</div><div class="q-text">There are five _______ on the table.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_3" value="A"><span class="opt-text">A. tomatos</span></label>
+<label><input type="radio" name="sec6_3" value="B"><span class="opt-text">B. pinaoes</span></label>
+<label><input type="radio" name="sec6_3" value="C"><span class="opt-text">C. radioes</span></label>
+<label><input type="radio" name="sec6_3" value="D"><span class="opt-text">D. photos</span></label>
+</div>
+<div class="q-result" id="r_sec6_3"></div>
+<div class="explain" id="e_sec6_3"><strong>答案：D</strong><br>photo 无生命 o 结尾直接加 s；A/B/C 均为错误拼写。</div>
+</div>
+<div class="q-item" id="q_sec6_4">
+<div class="q-head"><div class="q-num">4.</div><div class="q-text">Help yourselves to some _______, dear children!</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_4" value="A"><span class="opt-text">A. fishs</span></label>
+<label><input type="radio" name="sec6_4" value="B"><span class="opt-text">B. fishes</span></label>
+<label><input type="radio" name="sec6_4" value="C"><span class="opt-text">C. fish</span></label>
+<label><input type="radio" name="sec6_4" value="D"><span class="opt-text">D. the fish</span></label>
+</div>
+<div class="q-result" id="r_sec6_4"></div>
+<div class="explain" id="e_sec6_4"><strong>答案：C</strong><br>fish 鱼肉不可数 / 同种鱼单复数同形，不加 s。</div>
+</div>
+<div class="q-item" id="q_sec6_5">
+<div class="q-head"><div class="q-num">5.</div><div class="q-text">We have four ________.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_5" value="A"><span class="opt-text">A. class</span></label>
+<label><input type="radio" name="sec6_5" value="B"><span class="opt-text">B. classes</span></label>
+<label><input type="radio" name="sec6_5" value="C"><span class="opt-text">C. o'clock</span></label>
+<label><input type="radio" name="sec6_5" value="D"><span class="opt-text">D. classs</span></label>
+</div>
+<div class="q-result" id="r_sec6_5"></div>
+<div class="explain" id="e_sec6_5"><strong>答案：B</strong><br>class 以 s 结尾加 es：classes。</div>
+</div>
+<div class="q-item" id="q_sec6_6">
+<div class="q-head"><div class="q-num">6.</div><div class="q-text">I like autumn best. Because the _______ are pretty!</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_6" value="A"><span class="opt-text">A. colours</span></label>
+<label><input type="radio" name="sec6_6" value="B"><span class="opt-text">B. snow</span></label>
+<label><input type="radio" name="sec6_6" value="C"><span class="opt-text">C. colour</span></label>
+<label><input type="radio" name="sec6_6" value="D"><span class="opt-text">D. coloures</span></label>
+</div>
+<div class="q-result" id="r_sec6_6"></div>
+<div class="explain" id="e_sec6_6"><strong>答案：A</strong><br>colour 直接加 s；be 动词 are 提示用复数。</div>
+</div>
+<div class="q-item" id="q_sec6_7">
+<div class="q-head"><div class="q-num">7.</div><div class="q-text">You are ill. You should take some _______.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_7" value="A"><span class="opt-text">A. medicine</span></label>
+<label><input type="radio" name="sec6_7" value="B"><span class="opt-text">B. a medicine</span></label>
+<label><input type="radio" name="sec6_7" value="C"><span class="opt-text">C. medicine's</span></label>
+<label><input type="radio" name="sec6_7" value="D"><span class="opt-text">D. medicines</span></label>
+</div>
+<div class="q-result" id="r_sec6_7"></div>
+<div class="explain" id="e_sec6_7"><strong>答案：A</strong><br>medicine 不可数名词，不加 s 和 a。</div>
+</div>
+<div class="q-item" id="q_sec6_8">
+<div class="q-head"><div class="q-num">8.</div><div class="q-text">How many _____ do you have?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_8" value="A"><span class="opt-text">A. a pencil</span></label>
+<label><input type="radio" name="sec6_8" value="B"><span class="opt-text">B. pencils</span></label>
+<label><input type="radio" name="sec6_8" value="C"><span class="opt-text">C. pencil</span></label>
+<label><input type="radio" name="sec6_8" value="D"><span class="opt-text">D. penciles</span></label>
+</div>
+<div class="q-result" id="r_sec6_8"></div>
+<div class="explain" id="e_sec6_8"><strong>答案：B</strong><br>How many 后接复数 pencils。</div>
+</div>
+<div class="q-item" id="q_sec6_9">
+<div class="q-head"><div class="q-num">9.</div><div class="q-text">We have two ______ of ______.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_9" value="A"><span class="opt-text">A. piece; papers</span></label>
+<label><input type="radio" name="sec6_9" value="B"><span class="opt-text">B. pieces; paper</span></label>
+<label><input type="radio" name="sec6_9" value="C"><span class="opt-text">C. pieces; papers</span></label>
+<label><input type="radio" name="sec6_9" value="D"><span class="opt-text">D. piece; paper</span></label>
+</div>
+<div class="q-result" id="r_sec6_9"></div>
+<div class="explain" id="e_sec6_9"><strong>答案：B</strong><br>two pieces 复数；paper 不可数，不加 s。</div>
+</div>
+<div class="q-item" id="q_sec6_10">
+<div class="q-head"><div class="q-num">10.</div><div class="q-text">There are many ________ flying in the sky.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_10" value="A"><span class="opt-text">A. wild goose</span></label>
+<label><input type="radio" name="sec6_10" value="B"><span class="opt-text">B. wild geese</span></label>
+<label><input type="radio" name="sec6_10" value="C"><span class="opt-text">C. wild gooses</span></label>
+<label><input type="radio" name="sec6_10" value="D"><span class="opt-text">D. wild goosen</span></label>
+</div>
+<div class="q-result" id="r_sec6_10"></div>
+<div class="explain" id="e_sec6_10"><strong>答案：B</strong><br>goose 不规则变化→geese；many 后接复数。</div>
+</div>
+<div class="q-item" id="q_sec6_11">
+<div class="q-head"><div class="q-num">11.</div><div class="q-text">I have ________.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_11" value="A"><span class="opt-text">A. two arms</span></label>
+<label><input type="radio" name="sec6_11" value="B"><span class="opt-text">B. two arm</span></label>
+<label><input type="radio" name="sec6_11" value="C"><span class="opt-text">C. three leg</span></label>
+<label><input type="radio" name="sec6_11" value="D"><span class="opt-text">D. two armss</span></label>
+</div>
+<div class="q-result" id="r_sec6_11"></div>
+<div class="explain" id="e_sec6_11"><strong>答案：A</strong><br>two 后接复数 arms。</div>
+</div>
+<div class="q-item" id="q_sec6_12">
+<div class="q-head"><div class="q-num">12.</div><div class="q-text">The _______ play football.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_12" value="A"><span class="opt-text">A. man</span></label>
+<label><input type="radio" name="sec6_12" value="B"><span class="opt-text">B. men</span></label>
+<label><input type="radio" name="sec6_12" value="C"><span class="opt-text">C. boy</span></label>
+<label><input type="radio" name="sec6_12" value="D"><span class="opt-text">D. mans</span></label>
+</div>
+<div class="q-result" id="r_sec6_12"></div>
+<div class="explain" id="e_sec6_12"><strong>答案：B</strong><br>play 原形暗示主语复数；man→men。</div>
+</div>
+<div class="q-item" id="q_sec6_13">
+<div class="q-head"><div class="q-num">13.</div><div class="q-text">Shenzhen and Shanghai are both big _____.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_13" value="A"><span class="opt-text">A. cities</span></label>
+<label><input type="radio" name="sec6_13" value="B"><span class="opt-text">B. city</span></label>
+<label><input type="radio" name="sec6_13" value="C"><span class="opt-text">C. towns</span></label>
+<label><input type="radio" name="sec6_13" value="D"><span class="opt-text">D. citys</span></label>
+</div>
+<div class="q-result" id="r_sec6_13"></div>
+<div class="explain" id="e_sec6_13"><strong>答案：A</strong><br>city 辅音+y 变 i+es→cities。</div>
+</div>
+<div class="q-item" id="q_sec6_14">
+<div class="q-head"><div class="q-num">14.</div><div class="q-text">They are my _______.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_14" value="A"><span class="opt-text">A. friend</span></label>
+<label><input type="radio" name="sec6_14" value="B"><span class="opt-text">B. a friend</span></label>
+<label><input type="radio" name="sec6_14" value="C"><span class="opt-text">C. friends</span></label>
+<label><input type="radio" name="sec6_14" value="D"><span class="opt-text">D. friendes</span></label>
+</div>
+<div class="q-result" id="r_sec6_14"></div>
+<div class="explain" id="e_sec6_14"><strong>答案：C</strong><br>are 后接复数 friends。</div>
+</div>
+<div class="q-item" id="q_sec6_15">
+<div class="q-head"><div class="q-num">15.</div><div class="q-text">Would you like _________ for your breakfast?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_15" value="A"><span class="opt-text">A. any eggs</span></label>
+<label><input type="radio" name="sec6_15" value="B"><span class="opt-text">B. any strawberries</span></label>
+<label><input type="radio" name="sec6_15" value="C"><span class="opt-text">C. some bread</span></label>
+<label><input type="radio" name="sec6_15" value="D"><span class="opt-text">D. some apple</span></label>
+</div>
+<div class="q-result" id="r_sec6_15"></div>
+<div class="explain" id="e_sec6_15"><strong>答案：C</strong><br>Would you like 用 some 表委婉；bread 不可数。</div>
+</div>
+<div class="q-item" id="q_sec6_16">
+<div class="q-head"><div class="q-num">16.</div><div class="q-text">-How many________ are there? -Twelve.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_16" value="A"><span class="opt-text">A. sheep</span></label>
+<label><input type="radio" name="sec6_16" value="B"><span class="opt-text">B. a sheep</span></label>
+<label><input type="radio" name="sec6_16" value="C"><span class="opt-text">C. two sheep</span></label>
+<label><input type="radio" name="sec6_16" value="D"><span class="opt-text">D. sheeps</span></label>
+</div>
+<div class="q-result" id="r_sec6_16"></div>
+<div class="explain" id="e_sec6_16"><strong>答案：A</strong><br>sheep 单复数同形；How many 后接复数。</div>
+</div>
+<div class="q-item" id="q_sec6_17">
+<div class="q-head"><div class="q-num">17.</div><div class="q-text">How many _____________ are there in a year?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_17" value="A"><span class="opt-text">A. seasons</span></label>
+<label><input type="radio" name="sec6_17" value="B"><span class="opt-text">B. years</span></label>
+<label><input type="radio" name="sec6_17" value="C"><span class="opt-text">C. day</span></label>
+<label><input type="radio" name="sec6_17" value="D"><span class="opt-text">D. week</span></label>
+</div>
+<div class="q-result" id="r_sec6_17"></div>
+<div class="explain" id="e_sec6_17"><strong>答案：A</strong><br>一年有四季，seasons 复数。</div>
+</div>
+<div class="q-item" id="q_sec6_18">
+<div class="q-head"><div class="q-num">18.</div><div class="q-text">Can I have some _____?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_18" value="A"><span class="opt-text">A. breads</span></label>
+<label><input type="radio" name="sec6_18" value="B"><span class="opt-text">B. a bread</span></label>
+<label><input type="radio" name="sec6_18" value="C"><span class="opt-text">C. bread</span></label>
+<label><input type="radio" name="sec6_18" value="D"><span class="opt-text">D. breades</span></label>
+</div>
+<div class="q-result" id="r_sec6_18"></div>
+<div class="explain" id="e_sec6_18"><strong>答案：C</strong><br>bread 不可数名词，不加 s。</div>
+</div>
+<div class="q-item" id="q_sec6_19">
+<div class="q-head"><div class="q-num">19.</div><div class="q-text">These are __________. You can buy a pair for your mother.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_19" value="A"><span class="opt-text">A. woman sock</span></label>
+<label><input type="radio" name="sec6_19" value="B"><span class="opt-text">B. women sock</span></label>
+<label><input type="radio" name="sec6_19" value="C"><span class="opt-text">C. women socks</span></label>
+<label><input type="radio" name="sec6_19" value="D"><span class="opt-text">D. woman socks</span></label>
+</div>
+<div class="q-result" id="r_sec6_19"></div>
+<div class="explain" id="e_sec6_19"><strong>答案：C</strong><br>woman→women，sock 可数加 s→socks。</div>
+</div>
+<div class="q-item" id="q_sec6_20">
+<div class="q-head"><div class="q-num">20.</div><div class="q-text">Today we have two new ________.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_20" value="A"><span class="opt-text">A. friend</span></label>
+<label><input type="radio" name="sec6_20" value="B"><span class="opt-text">B. friends</span></label>
+<label><input type="radio" name="sec6_20" value="C"><span class="opt-text">C. boy</span></label>
+<label><input type="radio" name="sec6_20" value="D"><span class="opt-text">D. friendes</span></label>
+</div>
+<div class="q-result" id="r_sec6_20"></div>
+<div class="explain" id="e_sec6_20"><strong>答案：B</strong><br>two 后接复数 friends。</div>
+</div>
+<div class="q-item" id="q_sec6_21">
+<div class="q-head"><div class="q-num">21.</div><div class="q-text">How many _________ do you have?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_21" value="A"><span class="opt-text">A. book</span></label>
+<label><input type="radio" name="sec6_21" value="B"><span class="opt-text">B. books</span></label>
+<label><input type="radio" name="sec6_21" value="C"><span class="opt-text">C. pencil</span></label>
+<label><input type="radio" name="sec6_21" value="D"><span class="opt-text">D. bookes</span></label>
+</div>
+<div class="q-result" id="r_sec6_21"></div>
+<div class="explain" id="e_sec6_21"><strong>答案：B</strong><br>How many 后接复数 books。</div>
+</div>
+<div class="q-item" id="q_sec6_22">
+<div class="q-head"><div class="q-num">22.</div><div class="q-text">We are ____.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_22" value="A"><span class="opt-text">A. friend</span></label>
+<label><input type="radio" name="sec6_22" value="B"><span class="opt-text">B. friends</span></label>
+<label><input type="radio" name="sec6_22" value="C"><span class="opt-text">C. Canada</span></label>
+<label><input type="radio" name="sec6_22" value="D"><span class="opt-text">D. friendes</span></label>
+</div>
+<div class="q-result" id="r_sec6_22"></div>
+<div class="explain" id="e_sec6_22"><strong>答案：B</strong><br>are 后接复数 friends。</div>
+</div>
+<div class="q-item" id="q_sec6_23">
+<div class="q-head"><div class="q-num">23.</div><div class="q-text">-How many _______ are there in the basket? -There are six.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_23" value="A"><span class="opt-text">A. bread</span></label>
+<label><input type="radio" name="sec6_23" value="B"><span class="opt-text">B. mangoes</span></label>
+<label><input type="radio" name="sec6_23" value="C"><span class="opt-text">C. meat</span></label>
+<label><input type="radio" name="sec6_23" value="D"><span class="opt-text">D. mango</span></label>
+</div>
+<div class="q-result" id="r_sec6_23"></div>
+<div class="explain" id="e_sec6_23"><strong>答案：B</strong><br>mango 有生命 o 结尾加 es→mangoes；are six 提示复数。</div>
+</div>
+<div class="q-item" id="q_sec6_24">
+<div class="q-head"><div class="q-num">24.</div><div class="q-text">How many ________ are there in your school?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_24" value="A"><span class="opt-text">A. teacher</span></label>
+<label><input type="radio" name="sec6_24" value="B"><span class="opt-text">B. teaches</span></label>
+<label><input type="radio" name="sec6_24" value="C"><span class="opt-text">C. teachers</span></label>
+<label><input type="radio" name="sec6_24" value="D"><span class="opt-text">D. teacheres</span></label>
+</div>
+<div class="q-result" id="r_sec6_24"></div>
+<div class="explain" id="e_sec6_24"><strong>答案：C</strong><br>teacher 直接加 s。</div>
+</div>
+<div class="q-item" id="q_sec6_25">
+<div class="q-head"><div class="q-num">25.</div><div class="q-text">I like ________.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_25" value="A"><span class="opt-text">A. potatoes</span></label>
+<label><input type="radio" name="sec6_25" value="B"><span class="opt-text">B. potato</span></label>
+<label><input type="radio" name="sec6_25" value="C"><span class="opt-text">C. potatos</span></label>
+<label><input type="radio" name="sec6_25" value="D"><span class="opt-text">D. potatoies</span></label>
+</div>
+<div class="q-result" id="r_sec6_25"></div>
+<div class="explain" id="e_sec6_25"><strong>答案：A</strong><br>potato 有生命 o 结尾加 es→potatoes。</div>
+</div>
+<div class="q-item" id="q_sec6_26">
+<div class="q-head"><div class="q-num">26.</div><div class="q-text">-What are your _______, Mike? -I like singing and dancing.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_26" value="A"><span class="opt-text">A. hobby</span></label>
+<label><input type="radio" name="sec6_26" value="B"><span class="opt-text">B. hobbys</span></label>
+<label><input type="radio" name="sec6_26" value="C"><span class="opt-text">C. hobbies</span></label>
+<label><input type="radio" name="sec6_26" value="D"><span class="opt-text">D. hobbyes</span></label>
+</div>
+<div class="q-result" id="r_sec6_26"></div>
+<div class="explain" id="e_sec6_26"><strong>答案：C</strong><br>hobby 辅音+y 变 i 加 es→hobbies。</div>
+</div>
+<div class="q-item" id="q_sec6_27">
+<div class="q-head"><div class="q-num">27.</div><div class="q-text">-What are those? -Those are the _____.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_27" value="A"><span class="opt-text">A. eye</span></label>
+<label><input type="radio" name="sec6_27" value="B"><span class="opt-text">B. ear</span></label>
+<label><input type="radio" name="sec6_27" value="C"><span class="opt-text">C. faces</span></label>
+<label><input type="radio" name="sec6_27" value="D"><span class="opt-text">D. face</span></label>
+</div>
+<div class="q-result" id="r_sec6_27"></div>
+<div class="explain" id="e_sec6_27"><strong>答案：C</strong><br>are 提示复数，face 加 s。</div>
+</div>
+<div class="q-item" id="q_sec6_28">
+<div class="q-head"><div class="q-num">28.</div><div class="q-text">There are some ________ on TV today.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_28" value="A"><span class="opt-text">A. children's show</span></label>
+<label><input type="radio" name="sec6_28" value="B"><span class="opt-text">B. children's shows</span></label>
+<label><input type="radio" name="sec6_28" value="C"><span class="opt-text">C. children show</span></label>
+<label><input type="radio" name="sec6_28" value="D"><span class="opt-text">D. childrens show</span></label>
+</div>
+<div class="q-result" id="r_sec6_28"></div>
+<div class="explain" id="e_sec6_28"><strong>答案：B</strong><br>children 已复数，shows 也需复数。</div>
+</div>
+<div class="q-item" id="q_sec6_29">
+<div class="q-head"><div class="q-num">29.</div><div class="q-text">Which _________ do you like best?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_29" value="A"><span class="opt-text">A. season</span></label>
+<label><input type="radio" name="sec6_29" value="B"><span class="opt-text">B. seasons</span></label>
+<label><input type="radio" name="sec6_29" value="C"><span class="opt-text">C. a season</span></label>
+<label><input type="radio" name="sec6_29" value="D"><span class="opt-text">D. seasones</span></label>
+</div>
+<div class="q-result" id="r_sec6_29"></div>
+<div class="explain" id="e_sec6_29"><strong>答案：A</strong><br>Which + 单数表示"哪一个"；best 最喜一个。</div>
+</div>
+<div class="q-item" id="q_sec6_30">
+<div class="q-head"><div class="q-num">30.</div><div class="q-text">-What _____ the room messy? -The _____ make the room messy.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_30" value="A"><span class="opt-text">A. make; toy</span></label>
+<label><input type="radio" name="sec6_30" value="B"><span class="opt-text">B. makes; book</span></label>
+<label><input type="radio" name="sec6_30" value="C"><span class="opt-text">C. makes; books</span></label>
+<label><input type="radio" name="sec6_30" value="D"><span class="opt-text">D. make; books</span></label>
+</div>
+<div class="q-result" id="r_sec6_30"></div>
+<div class="explain" id="e_sec6_30"><strong>答案：C</strong><br>What 作主语用单数 makes；books 复数对应 make。</div>
+</div>
+<div class="q-item" id="q_sec6_31">
+<div class="q-head"><div class="q-num">31.</div><div class="q-text">I want to go _______. I need some ________.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_31" value="A"><span class="opt-text">A. shop; crayons</span></label>
+<label><input type="radio" name="sec6_31" value="B"><span class="opt-text">B. shopping; crayon</span></label>
+<label><input type="radio" name="sec6_31" value="C"><span class="opt-text">C. shopping; crayons</span></label>
+<label><input type="radio" name="sec6_31" value="D"><span class="opt-text">D. shop; crayon</span></label>
+</div>
+<div class="q-result" id="r_sec6_31"></div>
+<div class="explain" id="e_sec6_31"><strong>答案：C</strong><br>go shopping 固定搭配；some 后接复数 crayons。</div>
+</div>
+<div class="q-item" id="q_sec6_32">
+<div class="q-head"><div class="q-num">32.</div><div class="q-text">-Would you like some ________ for dinner? -Sure.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_32" value="A"><span class="opt-text">A. beef</span></label>
+<label><input type="radio" name="sec6_32" value="B"><span class="opt-text">B. egg</span></label>
+<label><input type="radio" name="sec6_32" value="C"><span class="opt-text">C. breads</span></label>
+<label><input type="radio" name="sec6_32" value="D"><span class="opt-text">D. beefs</span></label>
+</div>
+<div class="q-result" id="r_sec6_32"></div>
+<div class="explain" id="e_sec6_32"><strong>答案：A</strong><br>beef 不可数名词，不加 s。</div>
+</div>
+<div class="q-item" id="q_sec6_33">
+<div class="q-head"><div class="q-num">33.</div><div class="q-text">We have two________ in the afternoon.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_33" value="A"><span class="opt-text">A. class</span></label>
+<label><input type="radio" name="sec6_33" value="B"><span class="opt-text">B. classes</span></label>
+<label><input type="radio" name="sec6_33" value="C"><span class="opt-text">C. English</span></label>
+<label><input type="radio" name="sec6_33" value="D"><span class="opt-text">D. class's</span></label>
+</div>
+<div class="q-result" id="r_sec6_33"></div>
+<div class="explain" id="e_sec6_33"><strong>答案：B</strong><br>two 后接复数 classes。</div>
+</div>
+<div class="q-item" id="q_sec6_34">
+<div class="q-head"><div class="q-num">34.</div><div class="q-text">The dinosaur is five ________.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_34" value="A"><span class="opt-text">A. ton</span></label>
+<label><input type="radio" name="sec6_34" value="B"><span class="opt-text">B. tons</span></label>
+<label><input type="radio" name="sec6_34" value="C"><span class="opt-text">C. a ton</span></label>
+<label><input type="radio" name="sec6_34" value="D"><span class="opt-text">D. tones</span></label>
+</div>
+<div class="q-result" id="r_sec6_34"></div>
+<div class="explain" id="e_sec6_34"><strong>答案：B</strong><br>five 后接复数 tons。</div>
+</div>
+<div class="q-item" id="q_sec6_35">
+<div class="q-head"><div class="q-num">35.</div><div class="q-text">I'm hungry. Please bring me some ______.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_35" value="A"><span class="opt-text">A. kites</span></label>
+<label><input type="radio" name="sec6_35" value="B"><span class="opt-text">B. desks</span></label>
+<label><input type="radio" name="sec6_35" value="C"><span class="opt-text">C. boxes</span></label>
+<label><input type="radio" name="sec6_35" value="D"><span class="opt-text">D. cakes</span></label>
+</div>
+<div class="q-result" id="r_sec6_35"></div>
+<div class="explain" id="e_sec6_35"><strong>答案：D</strong><br>hungry 提示食物，cakes 最合理。</div>
+</div>
+<div class="q-item" id="q_sec6_36">
+<div class="q-head"><div class="q-num">36.</div><div class="q-text">-How many ______ do you have? -Ten.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_36" value="A"><span class="opt-text">A. sheep</span></label>
+<label><input type="radio" name="sec6_36" value="B"><span class="opt-text">B. horse</span></label>
+<label><input type="radio" name="sec6_36" value="C"><span class="opt-text">C. cow</span></label>
+<label><input type="radio" name="sec6_36" value="D"><span class="opt-text">D. dog</span></label>
+</div>
+<div class="q-result" id="r_sec6_36"></div>
+<div class="explain" id="e_sec6_36"><strong>答案：A</strong><br>sheep 单复数同形；How many 后接复数。</div>
+</div>
+<div class="q-item" id="q_sec6_37">
+<div class="q-head"><div class="q-num">37.</div><div class="q-text">It's 1 ____________ and 35 ____________.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_37" value="A"><span class="opt-text">A. dollar; cent</span></label>
+<label><input type="radio" name="sec6_37" value="B"><span class="opt-text">B. dollars; cents</span></label>
+<label><input type="radio" name="sec6_37" value="C"><span class="opt-text">C. dollar; cents</span></label>
+<label><input type="radio" name="sec6_37" value="D"><span class="opt-text">D. dollars; cent</span></label>
+</div>
+<div class="q-result" id="r_sec6_37"></div>
+<div class="explain" id="e_sec6_37"><strong>答案：B</strong><br>1 dollar（单数），35 cents（复数）。</div>
+</div>
+<div class="q-item" id="q_sec6_38">
+<div class="q-head"><div class="q-num">38.</div><div class="q-text">How many ________ can you see?</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_38" value="A"><span class="opt-text">A. sheep</span></label>
+<label><input type="radio" name="sec6_38" value="B"><span class="opt-text">B. goat</span></label>
+<label><input type="radio" name="sec6_38" value="C"><span class="opt-text">C. ship</span></label>
+<label><input type="radio" name="sec6_38" value="D"><span class="opt-text">D. dog</span></label>
+</div>
+<div class="q-result" id="r_sec6_38"></div>
+<div class="explain" id="e_sec6_38"><strong>答案：A</strong><br>sheep 单复数同形；How many 后接复数。</div>
+</div>
+<div class="q-item" id="q_sec6_39">
+<div class="q-head"><div class="q-num">39.</div><div class="q-text">I like ________.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_39" value="A"><span class="opt-text">A. strawberry</span></label>
+<label><input type="radio" name="sec6_39" value="B"><span class="opt-text">B. a strawberry</span></label>
+<label><input type="radio" name="sec6_39" value="C"><span class="opt-text">C. strawberries</span></label>
+<label><input type="radio" name="sec6_39" value="D"><span class="opt-text">D. strawberrys</span></label>
+</div>
+<div class="q-result" id="r_sec6_39"></div>
+<div class="explain" id="e_sec6_39"><strong>答案：C</strong><br>like 后可接复数表一类事物；strawberry→strawberries。</div>
+</div>
+<div class="q-item" id="q_sec6_40">
+<div class="q-head"><div class="q-num">40.</div><div class="q-text">I like green dogs and _______.</div></div>
+<div class="radio-group"><label><input type="radio" name="sec6_40" value="A"><span class="opt-text">A. cat blue</span></label>
+<label><input type="radio" name="sec6_40" value="B"><span class="opt-text">B. blue cats</span></label>
+<label><input type="radio" name="sec6_40" value="C"><span class="opt-text">C. blue cat</span></label>
+<label><input type="radio" name="sec6_40" value="D"><span class="opt-text">D. cats blue</span></label>
+</div>
+<div class="q-result" id="r_sec6_40"></div>
+<div class="explain" id="e_sec6_40"><strong>答案：B</strong><br>形容词 blue 在名词前；cats 与 dogs 并列复数。</div>
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-submit" id="btn_sec6" onclick="checkSection('sec6')">提交批改</button>
+<button class="btn btn-reset-sec" onclick="resetSection('sec6')">重做本题组</button>
+</div>
+</div>
+<div class="section" id="sec7">
+<div class="sec-header">
+<div class="sec-num" style="background:#F39C12">7</div>
+<div class="sec-title">七、将以下单复数句进行转换</div>
+<div class="sec-score wait" id="sec7_badge">未批改</div>
+</div>
+<div class="q-list"><div class="q-item" id="q_sec7_1">
+<div class="q-head"><div class="q-num">1.</div><div class="q-text">将"This is a knife."改为复数句/单数句：</div></div>
+<div class="radio-group"><label><input type="radio" name="sec7_1" value="A"><span class="opt-text">A. These are knives.</span></label>
+<label><input type="radio" name="sec7_1" value="B"><span class="opt-text">B. This are knives.</span></label>
+<label><input type="radio" name="sec7_1" value="C"><span class="opt-text">C. These is knives.</span></label>
+<label><input type="radio" name="sec7_1" value="D"><span class="opt-text">D. These is a knife.</span></label>
+</div>
+<div class="q-result" id="r_sec7_1"></div>
+<div class="explain" id="e_sec7_1"><strong>答案：These are knives.</strong><br>this→these, is→are, knife→knives。</div>
+</div>
+<div class="q-item" id="q_sec7_2">
+<div class="q-head"><div class="q-num">2.</div><div class="q-text">将"That is a tomato."改为复数句/单数句：</div></div>
+<div class="radio-group"><label><input type="radio" name="sec7_2" value="A"><span class="opt-text">A. Those are tomatoes.</span></label>
+<label><input type="radio" name="sec7_2" value="B"><span class="opt-text">B. That are tomatoes.</span></label>
+<label><input type="radio" name="sec7_2" value="C"><span class="opt-text">C. Those is tomatoes.</span></label>
+<label><input type="radio" name="sec7_2" value="D"><span class="opt-text">D. Those is a tomato.</span></label>
+</div>
+<div class="q-result" id="r_sec7_2"></div>
+<div class="explain" id="e_sec7_2"><strong>答案：Those are tomatoes.</strong><br>that→those, is→are, tomato→tomatoes。</div>
+</div>
+<div class="q-item" id="q_sec7_3">
+<div class="q-head"><div class="q-num">3.</div><div class="q-text">将"That child is very good."改为复数句/单数句：</div></div>
+<div class="radio-group"><label><input type="radio" name="sec7_3" value="A"><span class="opt-text">A. Those children are very good.</span></label>
+<label><input type="radio" name="sec7_3" value="B"><span class="opt-text">B. That children are very good.</span></label>
+<label><input type="radio" name="sec7_3" value="C"><span class="opt-text">C. Those children is very good.</span></label>
+<label><input type="radio" name="sec7_3" value="D"><span class="opt-text">D. Those child is very good.</span></label>
+</div>
+<div class="q-result" id="r_sec7_3"></div>
+<div class="explain" id="e_sec7_3"><strong>答案：Those children are very good.</strong><br>that→those, child→children, is→are。</div>
+</div>
+<div class="q-item" id="q_sec7_4">
+<div class="q-head"><div class="q-num">4.</div><div class="q-text">将"These are mice."改为复数句/单数句：</div></div>
+<div class="radio-group"><label><input type="radio" name="sec7_4" value="A"><span class="opt-text">A. This is a mouse.</span></label>
+<label><input type="radio" name="sec7_4" value="B"><span class="opt-text">B. These is a mouse.</span></label>
+<label><input type="radio" name="sec7_4" value="C"><span class="opt-text">C. Thare are a mouse.</span></label>
+<label><input type="radio" name="sec7_4" value="D"><span class="opt-text">D. This are mice.</span></label>
+</div>
+<div class="q-result" id="r_sec7_4"></div>
+<div class="explain" id="e_sec7_4"><strong>答案：This is a mouse.</strong><br>these→this, are→is, mice→a mouse（单数还原）。</div>
+</div>
+<div class="q-item" id="q_sec7_5">
+<div class="q-head"><div class="q-num">5.</div><div class="q-text">将"Those are children."改为复数句/单数句：</div></div>
+<div class="radio-group"><label><input type="radio" name="sec7_5" value="A"><span class="opt-text">A. That is a child.</span></label>
+<label><input type="radio" name="sec7_5" value="B"><span class="opt-text">B. Those is a child.</span></label>
+<label><input type="radio" name="sec7_5" value="C"><span class="opt-text">C. That are a child.</span></label>
+<label><input type="radio" name="sec7_5" value="D"><span class="opt-text">D. That are children.</span></label>
+</div>
+<div class="q-result" id="r_sec7_5"></div>
+<div class="explain" id="e_sec7_5"><strong>答案：That is a child.</strong><br>those→that, are→is, children→a child（单数还原）。</div>
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-submit" id="btn_sec7" onclick="checkSection('sec7')">提交批改</button>
+<button class="btn btn-reset-sec" onclick="resetSection('sec7')">重做本题组</button>
+</div>
+</div>
+
+<div class="btn-row" style="margin-top:8px">
+<button class="btn btn-reset" onclick="resetAll()" style="font-size:15px">全部重新作答</button>
+</div>
+<div class="footer">《小学英语语法训练（上册）》Lesson 2 互动练习 | 2026-06-03</div>
+</div>
+
+<script>
+
+var secAnswers = {};
+var secTotals = {};
+var secOrder = {};
+var secGraded = {};
+var secScores = {};
+var overallTotal = 0;
+var overallCorrect = 0;
+var gradedCount = 0;
+
+secAnswers["sec1"] = ['A', 'A', 'A', 'A', 'A', 'A', 'C', 'B', 'B', 'A', 'B', 'C', 'C', 'C', 'A'];secAnswers["sec2"] = ['B', 'C', 'C', 'A', 'A', 'A', 'A', 'A', 'C', 'A', 'B', 'C', 'B', 'C', 'B'];secAnswers["sec3"] = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'];secAnswers["sec4"] = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'];secAnswers["sec5"] = ['A', 'A', 'B', 'B', 'A'];secAnswers["sec6"] = ['B', 'C', 'D', 'C', 'B', 'A', 'A', 'B', 'B', 'B', 'A', 'B', 'A', 'C', 'C', 'A', 'A', 'C', 'C', 'B', 'B', 'B', 'B', 'C', 'A', 'C', 'C', 'B', 'A', 'C', 'C', 'A', 'B', 'B', 'D', 'A', 'B', 'A', 'C', 'B'];secAnswers["sec7"] = ['A', 'A', 'A', 'A', 'A'];
+secTotals["sec1"] = 15;secTotals["sec2"] = 15;secTotals["sec3"] = 48;secTotals["sec4"] = 17;secTotals["sec5"] = 5;secTotals["sec6"] = 40;secTotals["sec7"] = 5;
+secOrder["sec1"] = ['sec1_1', 'sec1_2', 'sec1_3', 'sec1_4', 'sec1_5', 'sec1_6', 'sec1_7', 'sec1_8', 'sec1_9', 'sec1_10', 'sec1_11', 'sec1_12', 'sec1_13', 'sec1_14', 'sec1_15'];secOrder["sec2"] = ['sec2_1', 'sec2_2', 'sec2_3', 'sec2_4', 'sec2_5', 'sec2_6', 'sec2_7', 'sec2_8', 'sec2_9', 'sec2_10', 'sec2_11', 'sec2_12', 'sec2_13', 'sec2_14', 'sec2_15'];secOrder["sec3"] = ['sec3_1', 'sec3_2', 'sec3_3', 'sec3_4', 'sec3_5', 'sec3_6', 'sec3_7', 'sec3_8', 'sec3_9', 'sec3_10', 'sec3_11', 'sec3_12', 'sec3_13', 'sec3_14', 'sec3_15', 'sec3_16', 'sec3_17', 'sec3_18', 'sec3_19', 'sec3_20', 'sec3_21', 'sec3_22', 'sec3_23', 'sec3_24', 'sec3_25', 'sec3_26', 'sec3_27', 'sec3_28', 'sec3_29', 'sec3_30', 'sec3_31', 'sec3_32', 'sec3_33', 'sec3_34', 'sec3_35', 'sec3_36', 'sec3_37', 'sec3_38', 'sec3_39', 'sec3_40', 'sec3_41', 'sec3_42', 'sec3_43', 'sec3_44', 'sec3_45', 'sec3_46', 'sec3_47', 'sec3_48'];secOrder["sec4"] = ['sec4_1', 'sec4_2', 'sec4_3', 'sec4_4', 'sec4_5', 'sec4_6', 'sec4_7', 'sec4_8', 'sec4_9', 'sec4_10', 'sec4_11', 'sec4_12', 'sec4_13', 'sec4_14', 'sec4_15', 'sec4_16', 'sec4_17'];secOrder["sec5"] = ['sec5_1', 'sec5_2', 'sec5_3', 'sec5_4', 'sec5_5'];secOrder["sec6"] = ['sec6_1', 'sec6_2', 'sec6_3', 'sec6_4', 'sec6_5', 'sec6_6', 'sec6_7', 'sec6_8', 'sec6_9', 'sec6_10', 'sec6_11', 'sec6_12', 'sec6_13', 'sec6_14', 'sec6_15', 'sec6_16', 'sec6_17', 'sec6_18', 'sec6_19', 'sec6_20', 'sec6_21', 'sec6_22', 'sec6_23', 'sec6_24', 'sec6_25', 'sec6_26', 'sec6_27', 'sec6_28', 'sec6_29', 'sec6_30', 'sec6_31', 'sec6_32', 'sec6_33', 'sec6_34', 'sec6_35', 'sec6_36', 'sec6_37', 'sec6_38', 'sec6_39', 'sec6_40'];secOrder["sec7"] = ['sec7_1', 'sec7_2', 'sec7_3', 'sec7_4', 'sec7_5'];
+
+function updateGlobal() {
+    document.getElementById("gDone").textContent = gradedCount;
+    document.getElementById("gScore").textContent = overallCorrect;
+    var pct = overallTotal > 0 ? Math.round(overallCorrect / overallTotal * 100) : 0;
+    document.getElementById("gBarFill").style.width = pct + "%";
+    var g = "";
+    if (gradedCount === 0) { g = "尚未批改"; }
+    else if (gradedCount < 7) { g = "已批 " + gradedCount + "/7 大题，正确率 " + pct + "%"; }
+    else if (pct >= 95) { g = "太棒了！名词单复数知识非常扎实！正确率 " + pct + "%"; }
+    else if (pct >= 80) { g = "不错！正确率 " + pct + "%"; }
+    else if (pct >= 60) { g = "还需练习，正确率 " + pct + "%"; }
+    else { g = "加油！仔细读解析，正确率 " + pct + "%"; }
+    document.getElementById("gGrade").textContent = g;
+}
+
+function checkSection(secId) {
+    if (secGraded[secId]) return;
+    var answers = secAnswers[secId];
+    var total = secTotals[secId];
+    var names = secOrder[secId];
+    var correct = 0;
+
+    for (var ni = 0; ni < names.length; ni++) {
+        var name = names[ni];
+        var radios = document.getElementsByName(name);
+        var selected = null;
+        for (var r = 0; r < radios.length; r++) {
+            if (radios[r].checked) { selected = radios[r].value; break; }
+        }
+        var isOk = (selected === answers[ni]);
+        if (isOk) correct++;
+
+        var qDiv = document.getElementById("q_" + name);
+        if (qDiv) {
+            qDiv.classList.remove("correct", "wrong");
+            qDiv.classList.add(isOk ? "correct" : "wrong");
+        }
+        var rDiv = document.getElementById("r_" + name);
+        if (rDiv) {
+            rDiv.classList.add("show");
+            rDiv.innerHTML = isOk ? '<span class="ok">&#10003; 正确</span>' : '<span class="no">&#10007; 错误</span>';
+        }
+        if (!isOk) {
+            var eDiv = document.getElementById("e_" + name);
+            if (eDiv) eDiv.classList.add("show");
+        }
+    }
+
+    var badge = document.getElementById(secId + "_badge");
+    var pct = Math.round(correct / total * 100);
+    badge.textContent = correct + "/" + total + " (" + pct + "%)";
+    badge.classList.remove("wait");
+    badge.classList.add("done");
+
+    document.getElementById(secId).classList.add("graded");
+
+    var btn = document.getElementById("btn_" + secId);
+    btn.disabled = true;
+    btn.textContent = "已批改";
+
+    secGraded[secId] = true;
+    secScores[secId] = {total: total, correct: correct};
+    gradedCount = 0;
+    overallCorrect = 0;
+    for (var k in secGraded) {
+        if (secGraded[k]) {
+            gradedCount++;
+            overallCorrect += secScores[k].correct;
+        }
+    }
+    updateGlobal();
+}
+
+function resetSection(secId) {
+    var names = secOrder[secId];
+    for (var ni = 0; ni < names.length; ni++) {
+        var name = names[ni];
+        var radios = document.getElementsByName(name);
+        for (var r = 0; r < radios.length; r++) {
+            radios[r].checked = false;
+        }
+        var qDiv = document.getElementById("q_" + name);
+        if (qDiv) qDiv.classList.remove("correct", "wrong");
+        var rDiv = document.getElementById("r_" + name);
+        if (rDiv) { rDiv.classList.remove("show"); rDiv.innerHTML = ""; }
+        var eDiv = document.getElementById("e_" + name);
+        if (eDiv) eDiv.classList.remove("show");
+    }
+    var badge = document.getElementById(secId + "_badge");
+    badge.textContent = "未批改";
+    badge.classList.remove("done");
+    badge.classList.add("wait");
+    document.getElementById(secId).classList.remove("graded");
+    var btn = document.getElementById("btn_" + secId);
+    btn.disabled = false;
+    btn.textContent = "提交批改";
+    if (secGraded[secId]) {
+        overallCorrect -= secScores[secId].correct;
+        gradedCount--;
+        delete secGraded[secId];
+        delete secScores[secId];
+    }
+    updateGlobal();
+}
+
+function resetAll() {
+    var allSecs = ["sec1", "sec2", "sec3", "sec4", "sec5", "sec6", "sec7"];
+    for (var s = 0; s < allSecs.length; s++) { resetSection(allSecs[s]); }
+    window.scrollTo({top:0, behavior:"smooth"});
+}
+
+overallTotal = 145;
+document.getElementById("gTotal").textContent = overallTotal;
+updateGlobal();
+
+</script>
+</body>
+</html>
